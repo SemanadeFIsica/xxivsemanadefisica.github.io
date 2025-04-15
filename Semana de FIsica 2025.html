@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XXIV Semana de Física</title>
+    <link rel="stylesheet" href="semanadefisica.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    
+    <header>
+        
+        <div class="fundo-topo"></div>
+        <section class="logo">
+            <img src="ostra.png" alt="Logo da Semana de Física">
+        </section>
+        <h1>XXIV Semana de Física</h1>
+        <div class="header-text">
+            <h2>Sejam bem-vindos!</h2>
+            <p>Descubra mais sobre as oportunidades da física na XXIV Semana de Física!</p>
+        </div>
+    </header>
+    
+    <section class="about">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="layout/Bem%20vinndo.png" alt="Slide 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="layout/Chamada.png" alt="Slide 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="layout/Palestrante.png" alt="Slide 3">
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="icons">
+        <div class="icon"><img src="1.png" alt="Ensino"><p>Ensino</p></div>
+        <div class="icon"><img src="2.png" alt="Indústria"><p>Indústria</p></div>
+        <div class="icon"><img src="3.png" alt="Energia"><p>Energia</p></div>
+        <div class="icon"><img src="4.png" alt="Tecnologia"><p>Tecnologia</p></div>
+        <div class="icon"><img src="5.png" alt="Medicina"><p>Medicina</p></div>
+        <div class="icon"><img src="6.png" alt="Astronomia"><p>Astronomia</p></div>
+    </section>
+
+    <footer>
+        <div class="fundo-rodape"></div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>
