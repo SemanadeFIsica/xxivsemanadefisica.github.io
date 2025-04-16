@@ -16,12 +16,40 @@ preloadImages(imagesToPreload);
 
 // Inicializa o Swiper após o (provável) carregamento das imagens
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const menuCollapse = document.getElementById('menuCollapse');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            menuCollapse.classList.toggle('active');
+        });
+    }
+    
+    // Handle dropdown behavior on mobile
+    const dropdownBtns = document.querySelectorAll('.dropbtn');
+    
+    // Check if we're on mobile
+    const isMobile = window.innerWidth < 480;
+    
+    if (isMobile) {
+        dropdownBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const dropdownContent = this.nextElementSibling;
+                dropdownContent.style.display = 
+                    dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    }
+    
+    // Initialize Swiper with responsive breakpoints
     const swiper = new Swiper('.swiper-container', {
-        effect: 'fade', // Define o efeito como fade
+        effect: 'fade',
         grabCursor: true,
         loop: true,
         fadeEffect: {
-            crossFade: true // Garante que apenas uma imagem seja exibida por vez
+            crossFade: true
         },
         pagination: {
             el: '.swiper-pagination',
@@ -32,9 +60,58 @@ document.addEventListener('DOMContentLoaded', function() {
             prevEl: '.swiper-button-prev',
         },
         autoplay: {
-            delay: 5000, // Tempo de exibição de cada slide em milissegundos (5 segundos)
-            disableOnInteraction: false, // Permite que o autoplay continue após a interação do usuário
+            delay: 5000,
+            disableOnInteraction: false,
         },
-        speed: 0, // Define a velocidade da transição para 0 para mudança instantânea ao clicar
+        speed: 500,
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            },
+            // when window width is >= 640px
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            }
+        }
+    });
+    
+    // Adiciona efeito de fade in para elementos quando entram na viewport
+    const fadeElements = document.querySelectorAll('.about, .icons');
+    
+    const fadeInOnScroll = () => {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            const isVisible = (elementTop < window.innerHeight) && (elementBottom > 0);
+            
+            if (isVisible) {
+                element.classList.add('fade-in');
+            }
+        });
+    };
+    
+    // Executar no carregamento
+    fadeInOnScroll();
+    
+    // Adicionar evento de rolagem
+    window.addEventListener('scroll', fadeInOnScroll);
+    
+    // Handle resize events for responsive behavior
+    window.addEventListener('resize', function() {
+        // Reset mobile menu when resizing to desktop
+        if (window.innerWidth >= 480) {
+            if (menuCollapse) {
+                menuCollapse.classList.remove('active');
+            }
+            
+            // Reset any open dropdowns
+            document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                dropdown.style.display = '';
+            });
+        }
     });
 });

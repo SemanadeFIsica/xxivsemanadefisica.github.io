@@ -16,22 +16,24 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin-left: 2px;
-    background-size: auto 134%;
-    margin-top: 0; /* Define margin-top como 0 para o body */
+    margin-left: 0; /* Removed the 2px margin to prevent horizontal scrolling */
+    background-size: cover; /* Changed to cover for better responsive behavior */
+    background-position: center; /* Ensures background is properly centered */
+    margin-top: 0;
 }
 
 nav {
-    background-color: rgba(58, 0, 134, 0.445); /* Roxo com transparência */
+    background: linear-gradient(to right, rgba(58, 0, 134, 0.7), rgba(106, 60, 181, 0.7));
     color: white;
     padding: 10px 0;
-    background-image: none; /* Remove a imagem de fundo herdada do body */
-    position: fixed; /* Fixa o menu no topo */
+    background-image: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 101; /* Garante que o menu fique acima do cabeçalho */
-    margin-top: 0; /* Define margin-top como 0 para o menu */
+    z-index: 101;
+    margin-top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 nav ul {
@@ -39,6 +41,9 @@ nav ul {
     padding: 0;
     margin: 0;
     text-align: center;
+    display: flex; /* For mobile menu toggle */
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 nav ul li {
@@ -48,20 +53,24 @@ nav ul li {
 
 nav ul li a {
     display: block;
-    padding: 10px 20px;
+    padding: 10px 15px; /* Reduced padding for smaller screens */
     text-decoration: none;
     color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 /* Estilos do Dropdown */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgba(58, 0, 134, 0.466); /* Roxo mais escuro */
+    background: linear-gradient(to bottom, rgba(58, 0, 134, 0.8), rgba(106, 60, 181, 0.8));
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     z-index: 1;
-    margin-top: 0; /* Define margin-top como 0 para o dropdown */
+    margin-top: 0;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .dropdown-content a {
@@ -70,50 +79,57 @@ nav ul li a {
     text-decoration: none;
     display: block;
     text-align: left;
-    margin-top: 0; /* Define margin-top como 0 para os itens do dropdown */
+    margin-top: 0;
+    transition: background-color 0.3s ease;
 }
 
 /* Hover no link principal do dropdown */
 nav ul li:hover > a {
-    background-color: rgba(58, 0, 134, 0.145); /* Roxo mais claro */
+    background-color: rgba(138, 79, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 /* Mostrar o dropdown ao passar o mouse no item da lista */
 nav ul li:hover .dropdown-content {
     display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Hover nos itens do dropdown */
 .dropdown-content a:hover {
-    background-color: rgba(104, 51, 173, 0.212); /* Roxo bem claro */
-    color: #ffffff; /* Texto preto no hover */
+    background-color: rgba(138, 79, 255, 0.4);
+    color: #ffffff;
 }
 
 header,
 footer {
     position: relative;
-    padding-top: 60px; /* Adiciona um espaçamento para evitar que o conteúdo fique atrás do menu fixo */
+    padding-top: 60px;
     font-size: 24px;
     font-weight: bold;
-    background: rgba(0, 0, 0, 0.10);
+    background: linear-gradient(135deg, rgba(58, 0, 134, 0.2), rgba(106, 60, 181, 0.3));
     overflow: hidden;
     margin: 0;
-    margin-top: 0; /* Define margin-top como 0 para o header e footer */
+    margin-top: 0;
+    width: 100%; /* Ensure full width */
 }
 
 header {
     top: 0;
-    width: 100%;
     height: auto;
-    z-index: 100; /* Garante que o cabeçalho fique atrás do menu fixo */
+    z-index: 100;
     padding: 0;
     overflow: visible;
 }
 
 footer {
     bottom: 0;
-    width: 100%;
-    min-height: 150px;
+    min-height: 120px; /* Reduced height for mobile */
     margin-top: auto;
     z-index: -1;
 }
@@ -124,10 +140,12 @@ header::after {
     position: absolute;
     top: 0;
     height: 100%;
-    width: 300px;
+    width: 30%; /* Using percentage for responsive design */
+    max-width: 300px;
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
+    opacity: 0.8;
 }
 
 header::before {
@@ -152,15 +170,16 @@ footer::after {
     position: absolute;
     bottom: 0;
     height: 100%;
-    width: 350px;
+    width: 30%; /* Using percentage for responsive design */
+    max-width: 350px;
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.5;
+    opacity: 0.6;
     z-index: 1;
 }
 
 footer::before {
-    left: -170px;
+    left: -10%; /* Changed from fixed pixel to percentage */
     background-image: url('curvas%20de%20niveis-2.png');
     background-position: left bottom;
     transform: rotate(180deg);
@@ -184,101 +203,124 @@ footer > * {
 }
 
 header .logo img {
-    width: 200px;
+    width: 150px; /* Smaller logo for mobile */
+    max-width: 80%; /* Ensure it's not too large */
     margin: 10px auto;
-    margin-top: 100px; /* Define margin-top como 0 para a logo */
+    margin-top: 80px; /* Reduced for mobile */
+    filter: drop-shadow(0 0 10px rgba(138, 79, 255, 0.5));
 }
 
 header h1 {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Base size, will be larger on desktop */
     margin-top: 0;
     margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 0 15px; /* Added padding for breathing space */
 }
 
 header .header-text {
     margin-bottom: 10px;
-    margin-top: 0; /* Define margin-top como 0 para o header-text */
+    margin-top: 0;
+    padding: 0 15px; /* Added padding for breathing space */
 }
 
 header .header-text h2 {
     font-size: 1.2em;
     margin-bottom: 5px;
-    margin-top: 0; /* Define margin-top como 0 para o h2 do header-text */
+    margin-top: 0;
+    color: #d9c5ff;
 }
 
 header .header-text p {
     font-size: 0.9em;
     line-height: 1.4;
-    margin-top: 0; /* Define margin-top como 0 para o p do header-text */
+    margin-top: 0;
+    color: #d9c5ff;
 }
 
 main {
     flex-grow: 1;
-    margin-top: 0; /* Define margin-top como 0 para o main */
+    margin-top: 0;
+    width: 100%; /* Ensure full width */
 }
 
 .about {
-    background: rgba(58, 0, 134, 0.259);
-    padding: 20px;
+    background: linear-gradient(135deg, rgba(58, 0, 134, 0.4), rgba(106, 60, 181, 0.4));
+    padding: 15px; /* Smaller padding for mobile */
     border-radius: 10px;
-    margin: 5px;
+    margin: 15px 10px; /* Adjusted margin for mobile */
     text-align: center;
     position: relative;
     z-index: 1;
-    margin-top: 0; /* Define margin-top como 0 para a section about */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(138, 79, 255, 0.3);
 }
 
 .icons a {
     color: white;
-    text-decoration: none; /* Opcional: remove o sublinhado padrão dos links */
+    text-decoration: none;
 }
 
 .icons {
     display: flex;
-    justify-content: space-around; /* Ou space-between, space-evenly, flex-start, flex-end */
-    /* Certifique-se de que esta linha NÃO esteja presente ou esteja comentada */
-    /* flex-wrap: wrap; */
-    gap: 20px; /* Espaçamento entre os ícones */
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 600px; /* Ajuste conforme necessário */
+    justify-content: center; /* Center alignment */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 15px; /* Reduced gap for mobile */
+    padding: 10px;
+    margin: 15px auto;
+    max-width: 100%; /* Full width on mobile */
     position: relative;
     z-index: 1;
     margin-top: 0;
-    
 }
 
 .icon {
-    display: flex; /* Para alinhar imagem e texto verticalmente dentro do ícone */
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 0; /* Define margin-top como 0 para cada icon */
+    margin-top: 0;
+    transition: all 0.3s ease;
+    flex-basis: 28%; /* Allow 3 icons per row on small screens */
+    margin-bottom: 10px; /* Add space between rows */
+}
+
+.icon:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 0 5px #8a4fff);
 }
 
 .icon img {
-    width: 60px;
-    height: 60px;
+    width: 50px; /* Smaller for mobile */
+    height: 50px;
     margin-bottom: 5px;
     object-fit: contain;
-    margin-top: 0; /* Define margin-top como 0 para a imagem do icon */
+    margin-top: 0;
+    background-color: rgba(58, 0, 134, 0.3);
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid rgba(138, 79, 255, 0.5);
 }
 
 .icon p {
-    font-size: 0.9em;
+    font-size: 0.8em; /* Smaller text for mobile */
     margin-top: 5px;
+    color: #d9c5ff;
+    font-weight: bold;
 }
 
 .swiper-container {
     width: 100%;
-    max-width: 350px;
+    max-width: 320px; /* Smaller for mobile */
     height: auto;
-    margin: 20px auto;
-    margin-bottom: 20px;
-    border-radius: 0;
-    box-shadow: none;
+    margin: 15px auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 1;
-    margin-top: 0; /* Define margin-top como 0 para o swiper-container */
+    margin-top: 0;
+    border: 2px solid rgba(138, 79, 255, 0.5);
+    overflow: hidden;
 }
 
 .swiper-slide img {
@@ -288,65 +330,256 @@ main {
     width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: 0;
-    margin-top: 0; /* Define margin-top como 0 para a imagem do slide */
+    border-radius: 8px;
+    margin-top: 0;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: rgba(255, 255, 255, 0);
-    background-color: rgba(0, 0, 0, 0);
-    width: 40px;
-    height: 40px;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(58, 0, 134, 0.5);
+    width: 30px; /* Smaller for mobile */
+    height: 30px;
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1em; /* Smaller for mobile */
     transition: background-color 0.3s ease-in-out;
-    z-index: 1;
-    margin-top: 0; /* Define margin-top como 0 para os botões do swiper */
+    z-index: 10;
+    margin-top: 0;
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
     content: '';
+    font-size: 16px; /* Smaller for mobile */
+    color: white;
+}
+
+.swiper-button-next::after {
+    content: '❯';
+}
+
+.swiper-button-prev::after {
+    content: '❮';
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(138, 79, 255, 0.7);
+    transform: scale(1.1);
 }
 
 .swiper-button-next {
-    right: 30px; /* Aumenta a distância para a direita */
+    right: 5px; /* Closer to edge on mobile */
 }
 
 .swiper-button-prev {
-    left: 30px; /* Aumenta a distância para a esquerda */
+    left: 5px; /* Closer to edge on mobile */
 }
 
 .swiper-pagination {
     position: absolute;
-    bottom: 10px;
+    bottom: 5px; /* Closer to bottom on mobile */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
-    margin-top: 0; /* Define margin-top como 0 para a paginação do swiper */
+    margin-top: 0;
 }
 
 .swiper-pagination-bullet {
     background: white;
     opacity: 0.7;
-    width: 10px;
-    height: 10px;
+    width: 8px; /* Smaller for mobile */
+    height: 8px;
     border-radius: 50%;
-    transition: opacity 0.3s ease;
-    margin: 0 5px;
-    margin-top: 0; /* Define margin-top como 0 para os bullets da paginação */
+    transition: all 0.3s ease;
+    margin: 0 4px; /* Less spacing for mobile */
+    margin-top: 0;
 }
 
 .swiper-pagination-bullet-active {
     opacity: 1;
-    background: #ffffff;
+    background: #8a4fff;
+    transform: scale(1.2);
+}
+
+/* Animation for page transitions */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+
+/* Mobile menu button for smallest screens */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 100px;
+}
+
+/* Tablet and larger screens (768px and above) */
+@media screen and (min-width: 768px) {
+    header .logo img {
+        width: 180px; /* Larger on tablet */
+        margin-top: 90px;
+    }
+    
+    header h1 {
+        font-size: 1.6em;
+    }
+    
+    .icon {
+        flex-basis: auto; /* Reset to auto for tablets */
+    }
+    
+    .icon img {
+        width: 60px; /* Larger for tablet */
+        height: 60px;
+    }
+    
+    .icon p {
+        font-size: 0.85em;
+    }
+    
+    .swiper-container {
+        max-width: 340px; /* Slightly larger for tablet */
+    }
+    
+    .about {
+        margin: 20px 15px; /* More margin on tablet */
+        padding: 20px;
+    }
+    
+    .icons {
+        max-width: 600px; /* Constrain width on larger screens */
+        gap: 20px;
+    }
+}
+
+/* Desktop screens (992px and above) */
+@media screen and (min-width: 992px) {
+    header .logo img {
+        width: 200px; /* Full size on desktop */
+        margin-top: 100px;
+    }
+    
+    header h1 {
+        font-size: 1.7em; /* Larger on desktop */
+    }
+    
+    header .header-text h2 {
+        font-size: 1.3em;
+    }
+    
+    header .header-text p {
+        font-size: 1em;
+    }
+    
+    .icon img {
+        width: 70px; /* Full size on desktop */
+        height: 70px;
+    }
+    
+    .icon p {
+        font-size: 0.9em;
+    }
+    
+    .swiper-container {
+        max-width: 350px; /* Full size on desktop */
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 40px; /* Larger on desktop */
+        height: 40px;
+    }
+    
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 20px; /* Larger on desktop */
+    }
+    
+    nav ul li a {
+        padding: 10px 20px; /* More padding on desktop */
+    }
+}
+
+/* Support for very small screens (below 576px) */
+@media screen and (max-width: 576px) {
+    nav ul {
+        justify-content: center;
+    }
+    
+    nav ul li a {
+        padding: 8px 10px; /* Even smaller padding */
+        font-size: 0.9em;
+    }
+    
+    .icon {
+        flex-basis: 45%; /* 2 icons per row on smallest screens */
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 25px; /* Even smaller */
+        height: 25px;
+    }
+}
+
+/* For extremely small screens - hamburger menu */
+@media screen and (max-width: 480px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+    
+    /* Hide menu items by default on very small screens */
+    .menu-collapse {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    /* When active class is added via JS */
+    .menu-collapse.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        width: 100%;
+    }
+    
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+    }
+    
+    /* Adjust header spacing */
+    header {
+        padding-top: 70px; /* Account for taller mobile menu */
+    }
+    
+    /* Adjust icons for very small screens */
+    .icons {
+        gap: 10px;
+    }
+    
+    .icon img {
+        width: 45px;
+        height: 45px;
+    }
 }
