@@ -1,5 +1,6 @@
 /* Remove margens e preenchimentos padrão do body e html */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -9,18 +10,28 @@ html, body {
 
 body {
     font-family: 'Telegraf', sans-serif;
-    background: #000000;
+    background-image: url('5113509.jpg');
     color: white;
     text-align: center;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin-left: 2px;
+    background-size: auto 134%;
+    margin-top: 0; /* Define margin-top como 0 para o body */
 }
 
 nav {
-    background-color: #3b0086; /* Roxo */
+    background-color: rgba(58, 0, 134, 0.445); /* Roxo com transparência */
     color: white;
     padding: 10px 0;
+    background-image: none; /* Remove a imagem de fundo herdada do body */
+    position: fixed; /* Fixa o menu no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 101; /* Garante que o menu fique acima do cabeçalho */
+    margin-top: 0; /* Define margin-top como 0 para o menu */
 }
 
 nav ul {
@@ -46,10 +57,11 @@ nav ul li a {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #3b0086; /* Roxo mais escuro */
+    background-color: rgba(58, 0, 134, 0.466); /* Roxo mais escuro */
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 101;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 0; /* Define margin-top como 0 para o dropdown */
 }
 
 .dropdown-content a {
@@ -58,11 +70,12 @@ nav ul li a {
     text-decoration: none;
     display: block;
     text-align: left;
+    margin-top: 0; /* Define margin-top como 0 para os itens do dropdown */
 }
 
 /* Hover no link principal do dropdown */
 nav ul li:hover > a {
-    background-color: #3b0086; /* Roxo mais claro */
+    background-color: rgba(58, 0, 134, 0.145); /* Roxo mais claro */
 }
 
 /* Mostrar o dropdown ao passar o mouse no item da lista */
@@ -72,27 +85,28 @@ nav ul li:hover .dropdown-content {
 
 /* Hover nos itens do dropdown */
 .dropdown-content a:hover {
-    background-color: #6833ad; /* Roxo bem claro */
+    background-color: rgba(104, 51, 173, 0.212); /* Roxo bem claro */
     color: #ffffff; /* Texto preto no hover */
 }
 
-header, footer {
+header,
+footer {
     position: relative;
-    padding: 0;
+    padding-top: 60px; /* Adiciona um espaçamento para evitar que o conteúdo fique atrás do menu fixo */
     font-size: 24px;
     font-weight: bold;
-    background: #000000;
+    background: rgba(0, 0, 0, 0.10);
     overflow: hidden;
     margin: 0;
+    margin-top: 0; /* Define margin-top como 0 para o header e footer */
 }
 
 header {
     top: 0;
     width: 100%;
     height: auto;
-    z-index: 100;
-    padding: 0px;
-    position: relative;
+    z-index: 100; /* Garante que o cabeçalho fique atrás do menu fixo */
+    padding: 0;
     overflow: visible;
 }
 
@@ -101,27 +115,25 @@ footer {
     width: 100%;
     min-height: 150px;
     margin-top: auto;
-    z-index: 100;
+    z-index: -1;
 }
 
-header::before, header::after {
+header::before,
+header::after {
     content: "";
     position: absolute;
     top: 0;
     height: 100%;
-    width: 330px;
+    width: 300px;
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.5;
     z-index: 1;
 }
 
 header::before {
-   
     background-image: url('curvas%20de%20niveis-2.png');
     background-position: left top;
     left: 0;
-    width: center;
     height: 100%;
     transform: scaleX(-1);
 }
@@ -131,12 +143,11 @@ header::after {
     background-image: url('curvas%20de%20niveis-2.png');
     background-position: right top;
     top: 0;
-    right: 0;
-    width: center;
     height: 100%;
 }
 
-footer::before, footer::after {
+footer::before,
+footer::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -154,7 +165,6 @@ footer::before {
     background-position: left bottom;
     transform: rotate(180deg);
     bottom: 0;
-    width: 350px;
     height: 100%;
 }
 
@@ -164,12 +174,11 @@ footer::after {
     background-position: right bottom;
     transform: scaleY(-1);
     bottom: 0;
-    right: 0;
-    width: 350px;
     height: 100%;
 }
 
-header > *, footer > * {
+header > *,
+footer > * {
     position: relative;
     z-index: 2;
 }
@@ -177,58 +186,73 @@ header > *, footer > * {
 header .logo img {
     width: 200px;
     margin: 10px auto;
+    margin-top: 100px; /* Define margin-top como 0 para a logo */
 }
 
 header h1 {
     font-size: 1.5em;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 5px;
 }
 
 header .header-text {
     margin-bottom: 10px;
+    margin-top: 0; /* Define margin-top como 0 para o header-text */
 }
 
 header .header-text h2 {
     font-size: 1.2em;
     margin-bottom: 5px;
+    margin-top: 0; /* Define margin-top como 0 para o h2 do header-text */
 }
 
 header .header-text p {
     font-size: 0.9em;
     line-height: 1.4;
+    margin-top: 0; /* Define margin-top como 0 para o p do header-text */
 }
 
 main {
     flex-grow: 1;
+    margin-top: 0; /* Define margin-top como 0 para o main */
 }
 
 .about {
-    background: #3b0086;
+    background: rgba(58, 0, 134, 0.259);
     padding: 20px;
     border-radius: 10px;
     margin: 5px;
     text-align: center;
     position: relative;
-    z-index: 5;
+    z-index: 1;
+    margin-top: 0; /* Define margin-top como 0 para a section about */
+}
+
+.icons a {
+    color: white;
+    text-decoration: none; /* Opcional: remove o sublinhado padrão dos links */
 }
 
 .icons {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-around; /* Ou space-between, space-evenly, flex-start, flex-end */
+    /* Certifique-se de que esta linha NÃO esteja presente ou esteja comentada */
+    /* flex-wrap: wrap; */
+    gap: 20px; /* Espaçamento entre os ícones */
     padding: 20px;
-    margin: 30px auto;
-    max-width: 600px;
+    margin: 20px auto;
+    max-width: 600px; /* Ajuste conforme necessário */
     position: relative;
-    z-index: 5;
+    z-index: 1;
+    margin-top: 0;
+    
 }
 
 .icon {
-    display: flex;
+    display: flex; /* Para alinhar imagem e texto verticalmente dentro do ícone */
     flex-direction: column;
     align-items: center;
+    margin-top: 0; /* Define margin-top como 0 para cada icon */
 }
 
 .icon img {
@@ -236,6 +260,7 @@ main {
     height: 60px;
     margin-bottom: 5px;
     object-fit: contain;
+    margin-top: 0; /* Define margin-top como 0 para a imagem do icon */
 }
 
 .icon p {
@@ -249,10 +274,11 @@ main {
     height: auto;
     margin: 20px auto;
     margin-bottom: 20px;
-    border-radius: 0px;
+    border-radius: 0;
     box-shadow: none;
     position: relative;
-    z-index: 5;
+    z-index: 1;
+    margin-top: 0; /* Define margin-top como 0 para o swiper-container */
 }
 
 .swiper-slide img {
@@ -262,11 +288,13 @@ main {
     width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: 0px;
+    border-radius: 0;
+    margin-top: 0; /* Define margin-top como 0 para a imagem do slide */
 }
 
-.swiper-button-next, .swiper-button-prev {
-    color: #ffffff00;
+.swiper-button-next,
+.swiper-button-prev {
+    color: rgba(255, 255, 255, 0);
     background-color: rgba(0, 0, 0, 0);
     width: 40px;
     height: 40px;
@@ -276,14 +304,17 @@ main {
     align-items: center;
     font-size: 1.2em;
     transition: background-color 0.3s ease-in-out;
-    z-index: 10;
+    z-index: 1;
+    margin-top: 0; /* Define margin-top como 0 para os botões do swiper */
 }
 
-.swiper-button-next:after, .swiper-button-prev:after {
+.swiper-button-next::after,
+.swiper-button-prev::after {
     content: '';
 }
 
-.swiper-button-next:hover, .swiper-button-prev:hover {
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
     background-color: rgba(255, 255, 255, 0);
 }
 
@@ -300,7 +331,8 @@ main {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 1;
+    margin-top: 0; /* Define margin-top como 0 para a paginação do swiper */
 }
 
 .swiper-pagination-bullet {
@@ -311,6 +343,7 @@ main {
     border-radius: 50%;
     transition: opacity 0.3s ease;
     margin: 0 5px;
+    margin-top: 0; /* Define margin-top como 0 para os bullets da paginação */
 }
 
 .swiper-pagination-bullet-active {
