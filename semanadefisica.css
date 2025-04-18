@@ -10,7 +10,7 @@ body {
 
 body {
     font-family: 'Telegraf', sans-serif;
-    background-image: url('5113509.jpg');
+    background-image: url('assets/images/5113509.jpg');
     color: white;
     text-align: center;
     display: flex;
@@ -149,7 +149,7 @@ header::after {
 }
 
 header::before {
-    background-image: url('curvas%20de%20niveis-2.png');
+    background-image: url('assets/images/curvas%20de%20niveis-2.png');
     background-position: left top;
     left: 0;
     height: 100%;
@@ -158,7 +158,7 @@ header::before {
 
 header::after {
     right: 0;
-    background-image: url('curvas%20de%20niveis-2.png');
+    background-image: url('assets/images/curvas%20de%20niveis-2.png');
     background-position: right top;
     top: 0;
     height: 100%;
@@ -179,9 +179,9 @@ footer::after {
 }
 
 footer::before {
-    left: -10%; /* Changed from fixed pixel to percentage */
-    background-image: url('curvas%20de%20niveis-2.png');
-    background-position: left bottom;
+    left: 0; /* Changed from fixed pixel to percentage */
+    background-image: url('assets/images/curvas%20de%20niveis-2.png');
+    background-position: right top;
     transform: rotate(180deg);
     bottom: 0;
     height: 100%;
@@ -189,8 +189,8 @@ footer::before {
 
 footer::after {
     right: 0;
-    background-image: url('curvas%20de%20niveis-2.png');
-    background-position: right bottom;
+    background-image: url('assets/images/curvas%20de%20niveis-2.png');
+    background-position: right top;
     transform: scaleY(-1);
     bottom: 0;
     height: 100%;
@@ -334,41 +334,29 @@ main {
     margin-top: 0;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(58, 0, 134, 0.5);
-    width: 30px; /* Smaller for mobile */
-    height: 30px;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1em; /* Smaller for mobile */
-    transition: background-color 0.3s ease-in-out;
-    z-index: 10;
-    margin-top: 0;
+.swiper-container .swiper-button-next,
+.swiper-container .swiper-button-prev {
+    width: 30px !important; /* Tamanho base para mobile */
+    height: 30px !important;
+    background-color: rgba(58, 0, 134, 0.5) !important;
+    border-radius: 3px !important; /* Quadrado com cantos levemente arredondados */
+    margin-top: -15px !important; /* Centraliza verticalmente */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) !important;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-    content: '';
-    font-size: 16px; /* Smaller for mobile */
-    color: white;
+.swiper-container .swiper-button-next:after,
+.swiper-container .swiper-button-prev:after {
+    font-size: 14px !important; /* Tamanho reduzido para caber bem no botão quadrado */
+    color: white !important;
+    font-weight: bold !important;
 }
 
-.swiper-button-next::after {
-    content: '❯';
-}
-
-.swiper-button-prev::after {
-    content: '❮';
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    background-color: rgba(138, 79, 255, 0.7);
-    transform: scale(1.1);
+/* Efeito hover */
+.swiper-container .swiper-button-next:hover,
+.swiper-container .swiper-button-prev:hover {
+    background-color: rgba(138, 79, 255, 0.7) !important;
+    transform: translateY(-2px) !important;
+    cursor: pointer; /* Indica que é clicável */
 }
 
 .swiper-button-next {
@@ -487,6 +475,21 @@ main {
         font-size: 1em;
     }
     
+    .icon {
+        flex-basis: 18%; /* Aproximadamente 5 itens por linha (5 x 18% = 90% + gaps) */
+        max-width: 18%;
+    }
+    
+    .icons {
+        max-width: 1200px;
+        flex-wrap: nowrap; /* Evita quebra de linha em desktop */
+    }
+    
+    /* Reduzir ligeiramente o gap para desktop para encaixar melhor */
+    .icons {
+        gap: 10px;
+    }
+
     .icon img {
         width: 70px; /* Full size on desktop */
         height: 70px;
@@ -550,13 +553,25 @@ main {
     /* Hide menu items by default on very small screens */
     .menu-collapse {
         display: none;
-        width: 100%;
         flex-direction: column;
+        background: linear-gradient(to right, rgba(58, 0, 134, 0.7), rgba(106, 60, 181, 0.7));
+        position: absolute;
+        top: 100%;
+        right: 15px;
+        left: 15px;
+        width: auto;
+        border-radius: 0 0 10px 10px;
     }
     
     /* When active class is added via JS */
     .menu-collapse.active {
         display: flex;
+    }
+
+    nav {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+        padding-top: 59px;
+        content: "";
     }
     
     nav ul li {
