@@ -213,20 +213,20 @@ header .logo img {
 header h1 {
     font-size: 1.5em; /* Base size, will be larger on desktop */
     margin-top: 0;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 0 15px; /* Added padding for breathing space */
 }
 
 header .header-text {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: 0;
     padding: 0 15px; /* Added padding for breathing space */
 }
 
 header .header-text h2 {
     font-size: 1.2em;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     margin-top: 0;
     color: #d9c5ff;
 }
@@ -236,6 +236,7 @@ header .header-text p {
     line-height: 1.4;
     margin-top: 0;
     color: #d9c5ff;
+    margin: 0px 0px 0px;
 }
 
 main {
@@ -446,8 +447,8 @@ main {
     }
     
     .about {
-        margin: 20px 15px; /* More margin on tablet */
-        padding: 20px;
+        margin: 5px 15px; /* More margin on tablet */
+        padding: 30px;
     }
     
     .icons {
@@ -456,11 +457,12 @@ main {
     }
 }
 
+
 /* Desktop screens (992px and above) */
 @media screen and (min-width: 992px) {
     header .logo img {
         width: 200px; /* Full size on desktop */
-        margin-top: 100px;
+        margin-top: 80px;
     }
     
     header h1 {
@@ -598,3 +600,76 @@ main {
         height: 45px;
     }
 }
+
+/* Botão Increva-se */
+
+.btn:link,
+.btn:visited {
+    margin-bottom: 1px;
+    margin-top: 1px;
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px 100px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: center;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: #2f0464b3;
+    color: #777;
+}
+
+.btn::after {
+    
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: 10.4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* Fim Botão Increva-se */
