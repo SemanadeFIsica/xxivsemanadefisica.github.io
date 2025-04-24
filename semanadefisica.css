@@ -27,7 +27,6 @@ nav {
     color: white;
     padding: 10px 0;
     background-image: none;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -247,14 +246,14 @@ main {
 
 .about {
     background: linear-gradient(135deg, rgba(58, 0, 134, 0.4), rgba(106, 60, 181, 0.4));
-    padding: 15px; /* Smaller padding for mobile */
-    border-radius: 10px;
-    margin: 15px 10px; /* Adjusted margin for mobile */
+    padding: 0; /* Smaller padding for mobile */
+    border-radius: 0px;
+    margin: 0; /* Adjusted margin for mobile */
     text-align: center;
     position: relative;
     z-index: 1;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(138, 79, 255, 0.3);
+    border: 0px solid rgba(138, 79, 255, 0.3);
 }
 
 .icons a {
@@ -310,17 +309,18 @@ main {
 }
 
 .swiper-container {
-    width: 100%;
-    max-width: 320px; /* Smaller for mobile */
+    width: 100vw;
+    max-width: 100%; /* Smaller for mobile */
     height: auto;
-    margin: 15px auto;
+    margin: 0;
     margin-bottom: 15px;
-    border-radius: 10px;
+    border-radius: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 1;
     margin-top: 0;
-    border: 2px solid rgba(138, 79, 255, 0.5);
+    margin-bottom: 0;
+    border: 0px solid rgba(138, 79, 255, 0.5);
     overflow: hidden;
 }
 
@@ -328,11 +328,25 @@ main {
     display: block;
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    height: auto !important;
+    object-fit: cover;
+    border-radius: 0px;
     margin-top: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.x {
+    top: 0;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30%; /* Using percentage for responsive design */
+    max-width: 300px;
+    background-size: contain;
+    z-index: 1;
+    opacity: 0.8;
 }
 
 .swiper-container .swiper-button-next,
@@ -442,14 +456,16 @@ main {
         font-size: 0.85em;
     }
     
-    .swiper-container {
-        max-width: 340px; /* Slightly larger for tablet */
-    }
+    /*.swiper-container {
+        max-width: 340px; Slightly larger for tablet
+    }*/
     
+    /*
     .about {
-        margin: 5px 15px; /* More margin on tablet */
+        margin: 5px 15px;  More margin on tablet
         padding: 30px;
     }
+    */
     
     .icons {
         max-width: 600px; /* Constrain width on larger screens */
@@ -500,10 +516,11 @@ main {
     .icon p {
         font-size: 0.9em;
     }
-    
+    /*
     .swiper-container {
-        max-width: 350px; /* Full size on desktop */
+        max-width: 350px; Full size on desktop
     }
+    */
     
     .swiper-button-next,
     .swiper-button-prev {
