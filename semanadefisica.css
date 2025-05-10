@@ -1,3 +1,66 @@
+/* Importa as fontes necessárias para o site */
+/*
+.otf → format('opentype')
+
+.ttf → format('truetype')
+
+.woff → format('woff')
+
+.woff2 → format('woff2')
+*/
+@font-face{
+    font-family: 'Telegraf';
+    src: url('assets/fonts/telegraf/telegrafregular_272984568a25d8528fe2de8b20b29011-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Telegraf';
+    src: url('assets/fonts/telegraf/telegraf_ultralight_200-webfont.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Telegraf';
+        src: url('assets/fonts/telegraf/telegraf_ultrabold_800-webfont.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Garet';
+        src: url('assets/fonts/garet/Garet-Book.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Garet';
+        src: url('assets/fonts/garet/Garet-Heavy.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.telegraf-regular {
+    font-family: 'Telegraf', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+.telegraf-ultrabold {
+    font-family: 'Telegraf', Helvetica, Arial, sans-serif;
+    font-weight: 900;
+}
+
+.garet-book {
+    font-family: 'Garet', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+.garet-heavy {
+    font-family: 'Garet', Helvetica, Arial, sans-serif;
+    font-weight: 900;
+}
+
 /* Remove margens e preenchimentos padrão do body e html */
 html,
 body {
@@ -10,7 +73,9 @@ body {
 
 body {
     font-family: 'Telegraf', sans-serif;
-    background-image: url('assets/images/5113509.jpg');
+    /* background-image: url('assets/images/5113509.jpg'); */
+    background: linear-gradient(to top left, #240052, #3b0086);
+    /* background-color: #260055; */
     color: white;
     text-align: center;
     display: flex;
@@ -23,10 +88,11 @@ body {
 }
 
 nav {
-    background: linear-gradient(to right, rgba(58, 0, 134, 0.7), rgba(106, 60, 181, 0.7));
+    background: linear-gradient(to right, rgba(58, 0, 134, 1), rgba(106, 60, 181, 1));
+    /* background-color: #000000; */
     color: white;
     padding: 10px 0;
-    background-image: none;
+    /* background-image: none; */
     top: 0;
     left: 0;
     width: 100%;
@@ -107,6 +173,7 @@ nav ul li:hover .dropdown-content {
 
 header,
 footer {
+    font-family: 'Telegraf', sans-serif;
     position: relative;
     padding-top: 60px;
     font-size: 24px;
@@ -256,6 +323,20 @@ main {
     border: 0px solid rgba(138, 79, 255, 0.3);
 }
 
+.contents {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+    line-height: 1.8;
+}
+.contents p {
+    text-align: justify;
+}
+.contents h1 {
+    text-align: center;
+}
+
 .icons a {
     color: white;
     text-decoration: none;
@@ -339,7 +420,7 @@ main {
 
 .x {
     position: absolute;
-    top: 66.08%;      /* posição vertical relativa (ajuste conforme necessário) */
+    top: 65%;      /* posição vertical relativa (ajuste conforme necessário) */
     left: 50%;     /* centraliza na horizontal */
     transform: translate(-50%, -50%); /* corrige o alinhamento do centro do botão */
     z-index: 2;
@@ -620,13 +701,13 @@ main {
 .btn:visited {
     margin-bottom: 1px;
     margin-top: 1px;
-    font-size: 20px;
-    color: white;
+    font-size: 2vw;
+    color: #3b0086;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 2px 10px;
+    padding: 1.5vw 5vw;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 5vw;
     transition: all .2s;
     position: center;
 }
@@ -642,12 +723,11 @@ main {
 }
 
 .btn-white {
-    background-color: #2f0464b3;
+    background-color: #ffffff;
     color: #777;
 }
 
 .btn::after {
-    
     display: inline-block;
     height: 100%;
     width: 100%;
