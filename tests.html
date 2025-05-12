@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Slider Contínuo de Palestrantes</title>
+  <title>Slider + Detalhes do Palestrante</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
@@ -14,37 +14,48 @@
 </head>
 <body class="bg-gray-100 p-6">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6 text-center">Nossos Palestrantes</h2>
-    <div class="swiper mySwiper">
+    <h2 class="text-3xl font-bold mb-6 text-center">Palestrantes em Destaque</h2>
+
+    <!-- Slider -->
+    <div class="swiper mySwiper px-2 mb-8">
       <div class="swiper-wrapper">
 
-        <!-- Slide 1 -->
-        <div class="swiper-slide bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center w-60">
-          <img src="https://via.placeholder.com/150" alt="Palestrante 1" class="rounded-full w-24 h-24 mb-4">
-          <h3 class="text-xl font-semibold">João Silva</h3>
-          <div class="flex items-center justify-center mt-2">
+        <!-- Slides com dados embutidos como atributos -->
+        <div class="swiper-slide bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center cursor-pointer"
+             onclick="mostrarDetalhes(this)"
+             data-nome="João Silva"
+             data-bio="João é especialista em inovação tecnológica com 10 anos de experiência em startups."
+             data-foto="https://via.placeholder.com/150">
+          <img src="https://via.placeholder.com/150" alt="João" class="rounded-full w-24 h-24 mb-3">
+          <h3 class="text-lg font-semibold">João Silva</h3>
+          <div class="flex justify-center mt-1">
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="text-gray-300">★</span>
           </div>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="swiper-slide bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center w-60">
-          <img src="https://via.placeholder.com/150" alt="Palestrante 2" class="rounded-full w-24 h-24 mb-4">
-          <h3 class="text-xl font-semibold">Maria Oliveira</h3>
-          <div class="flex items-center justify-center mt-2">
+        <div class="swiper-slide bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center cursor-pointer"
+             onclick="mostrarDetalhes(this)"
+             data-nome="Maria Oliveira"
+             data-bio="Maria é pesquisadora e palestrante na área de inteligência artificial e ética digital."
+             data-foto="https://via.placeholder.com/150">
+          <img src="https://via.placeholder.com/150" alt="Maria" class="rounded-full w-24 h-24 mb-3">
+          <h3 class="text-lg font-semibold">Maria Oliveira</h3>
+          <div class="flex justify-center mt-1">
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="text-gray-300">★</span><span class="text-gray-300">★</span>
           </div>
         </div>
 
-        <!-- Repita os slides conforme necessário -->
-        <div class="swiper-slide bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center w-60">
-          <img src="https://via.placeholder.com/150" alt="Palestrante 3" class="rounded-full w-24 h-24 mb-4">
-          <h3 class="text-xl font-semibold">Carlos Mendes</h3>
-          <div class="flex items-center justify-center mt-2">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-        </div>
+      </div>
+    </div>
 
+    <!-- Seção de detalhes oculta inicialmente -->
+    <div id="detalhes" class="bg-white rounded-2xl shadow-lg p-6 hidden transition-all duration-300">
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+        <img id="detalhe-foto" src="" class="w-32 h-32 rounded-full border" alt="Foto do palestrante">
+        <div>
+          <h3 id="detalhe-nome" class="text-2xl font-bold mb-2"></h3>
+          <p id="detalhe-bio" class="text-gray-700"></p>
+        </div>
       </div>
     </div>
   </div>
@@ -52,18 +63,33 @@
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
+    // Slider config
     const swiper = new Swiper(".mySwiper", {
-      slidesPerView: "auto",
-      spaceBetween: 30,
+      slidesPerView: 2.5,
+      spaceBetween: 20,
       loop: true,
-      speed: 1000,
-      autoplay: {
-        delay: 10000,
-        disableOnInteraction: false,
-      },
       freeMode: true,
       freeModeMomentum: false,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      speed: 3000,
     });
+
+    // Função para exibir detalhes do palestrante
+    function mostrarDetalhes(el) {
+      const nome = el.dataset.nome;
+      const bio = el.dataset.bio;
+      const foto = el.dataset.foto;
+
+      document.getElementById('detalhe-nome').textContent = nome;
+      document.getElementById('detalhe-bio').textContent = bio;
+      document.getElementById('detalhe-foto').src = foto;
+
+      const detalhes = document.getElementById('detalhes');
+      detalhes.classList.remove('hidden');
+    }
   </script>
 </body>
 </html>
