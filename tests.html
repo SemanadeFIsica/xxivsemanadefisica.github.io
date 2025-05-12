@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slider Contínuo de Palestrantes</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    .star {
+      color: gold;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center">Nossos Palestrantes</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center w-60">
+          <img src="https://via.placeholder.com/150" alt="Palestrante 1" class="rounded-full w-24 h-24 mb-4">
+          <h3 class="text-xl font-semibold">João Silva</h3>
+          <div class="flex items-center justify-center mt-2">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="text-gray-300">★</span>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center w-60">
+          <img src="https://via.placeholder.com/150" alt="Palestrante 2" class="rounded-full w-24 h-24 mb-4">
+          <h3 class="text-xl font-semibold">Maria Oliveira</h3>
+          <div class="flex items-center justify-center mt-2">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="text-gray-300">★</span><span class="text-gray-300">★</span>
+          </div>
+        </div>
+
+        <!-- Repita os slides conforme necessário -->
+        <div class="swiper-slide bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center w-60">
+          <img src="https://via.placeholder.com/150" alt="Palestrante 3" class="rounded-full w-24 h-24 mb-4">
+          <h3 class="text-xl font-semibold">Carlos Mendes</h3>
+          <div class="flex items-center justify-center mt-2">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      spaceBetween: 30,
+      loop: true,
+      speed: 1000,
+      autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+      },
+      freeMode: true,
+      freeModeMomentum: false,
+    });
+  </script>
+</body>
+</html>

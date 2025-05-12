@@ -1,3 +1,66 @@
+/* Importa as fontes necessárias para o site */
+/*
+.otf → format('opentype')
+
+.ttf → format('truetype')
+
+.woff → format('woff')
+
+.woff2 → format('woff2')
+*/
+@font-face{
+    font-family: 'Telegraf';
+    src: url('assets/fonts/telegraf/telegrafregular_272984568a25d8528fe2de8b20b29011-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Telegraf';
+    src: url('assets/fonts/telegraf/telegraf_ultralight_200-webfont.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Telegraf';
+        src: url('assets/fonts/telegraf/telegraf_ultrabold_800-webfont.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Garet';
+        src: url('assets/fonts/garet/Garet-Book.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Garet';
+        src: url('assets/fonts/garet/Garet-Heavy.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.telegraf-regular {
+    font-family: 'Telegraf', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+.telegraf-ultrabold {
+    font-family: 'Telegraf', Helvetica, Arial, sans-serif;
+    font-weight: 900;
+}
+
+.garet-book {
+    font-family: 'Garet', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+.garet-heavy {
+    font-family: 'Garet', Helvetica, Arial, sans-serif;
+    font-weight: 900;
+}
+
 /* Remove margens e preenchimentos padrão do body e html */
 html,
 body {
@@ -10,7 +73,9 @@ body {
 
 body {
     font-family: 'Telegraf', sans-serif;
-    background-image: url('assets/images/5113509.jpg');
+    /* background-image: url('assets/images/5113509.jpg'); */
+    background: linear-gradient(to top left, #240052, #3b0086);
+    /* background-color: #260055; */
     color: white;
     text-align: center;
     display: flex;
@@ -23,11 +88,11 @@ body {
 }
 
 nav {
-    background: linear-gradient(to right, rgba(58, 0, 134, 0.7), rgba(106, 60, 181, 0.7));
+    background: linear-gradient(to right, rgba(58, 0, 134, 1), rgba(106, 60, 181, 1));
+    /* background-color: #000000; */
     color: white;
     padding: 10px 0;
-    background-image: none;
-    position: fixed;
+    /* background-image: none; */
     top: 0;
     left: 0;
     width: 100%;
@@ -108,6 +173,7 @@ nav ul li:hover .dropdown-content {
 
 header,
 footer {
+    font-family: 'Telegraf', sans-serif;
     position: relative;
     padding-top: 60px;
     font-size: 24px;
@@ -247,14 +313,28 @@ main {
 
 .about {
     background: linear-gradient(135deg, rgba(58, 0, 134, 0.4), rgba(106, 60, 181, 0.4));
-    padding: 15px; /* Smaller padding for mobile */
-    border-radius: 10px;
-    margin: 15px 10px; /* Adjusted margin for mobile */
+    padding: 0; /* Smaller padding for mobile */
+    border-radius: 0px;
+    margin: 0; /* Adjusted margin for mobile */
     text-align: center;
     position: relative;
     z-index: 1;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(138, 79, 255, 0.3);
+    border: 0px solid rgba(138, 79, 255, 0.3);
+}
+
+.contents {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+    line-height: 1.8;
+}
+.contents p {
+    text-align: justify;
+}
+.contents h1 {
+    text-align: center;
 }
 
 .icons a {
@@ -310,17 +390,18 @@ main {
 }
 
 .swiper-container {
-    width: 100%;
-    max-width: 320px; /* Smaller for mobile */
+    width: 100vw;
+    max-width: 100%; /* Smaller for mobile */
     height: auto;
-    margin: 15px auto;
+    margin: 0;
     margin-bottom: 15px;
-    border-radius: 10px;
+    border-radius: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 1;
     margin-top: 0;
-    border: 2px solid rgba(138, 79, 255, 0.5);
+    margin-bottom: 0;
+    border: 0px solid rgba(138, 79, 255, 0.5);
     overflow: hidden;
 }
 
@@ -328,11 +409,21 @@ main {
     display: block;
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    height: auto !important;
+    object-fit: cover;
+    border-radius: 0px;
     margin-top: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.x {
+    position: absolute;
+    top: 65%;      /* posição vertical relativa (ajuste conforme necessário) */
+    left: 50%;     /* centraliza na horizontal */
+    transform: translate(-50%, -50%); /* corrige o alinhamento do centro do botão */
+    z-index: 2;
 }
 
 .swiper-container .swiper-button-next,
@@ -442,14 +533,16 @@ main {
         font-size: 0.85em;
     }
     
-    .swiper-container {
-        max-width: 340px; /* Slightly larger for tablet */
-    }
+    /*.swiper-container {
+        max-width: 340px; Slightly larger for tablet
+    }*/
     
+    /*
     .about {
-        margin: 5px 15px; /* More margin on tablet */
+        margin: 5px 15px;  More margin on tablet
         padding: 30px;
     }
+    */
     
     .icons {
         max-width: 600px; /* Constrain width on larger screens */
@@ -500,10 +593,11 @@ main {
     .icon p {
         font-size: 0.9em;
     }
-    
+    /*
     .swiper-container {
-        max-width: 350px; /* Full size on desktop */
+        max-width: 350px; Full size on desktop
     }
+    */
     
     .swiper-button-next,
     .swiper-button-prev {
@@ -607,13 +701,13 @@ main {
 .btn:visited {
     margin-bottom: 1px;
     margin-top: 1px;
-    font-size: 20px;
-    color: white;
+    font-size: 2vw;
+    color: #3b0086;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 20px 100px;
+    padding: 1.5vw 5vw;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 5vw;
     transition: all .2s;
     position: center;
 }
@@ -629,12 +723,11 @@ main {
 }
 
 .btn-white {
-    background-color: #2f0464b3;
+    background-color: #ffffff;
     color: #777;
 }
 
 .btn::after {
-    
     display: inline-block;
     height: 100%;
     width: 100%;
@@ -658,6 +751,14 @@ main {
 .btn-animated {
     animation: moveInBottom 5s ease-out;
     animation-fill-mode: backwards;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* ou defina um valor fixo se necessário */
+    position: relative;
 }
 
 @keyframes moveInBottom {
