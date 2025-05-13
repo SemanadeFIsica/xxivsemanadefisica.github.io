@@ -23,7 +23,7 @@
 
     .banner-fundo {
       /* background: linear-gradient(135deg, rgb(114, 0, 250), rgba(39, 38, 42, 1)); */
-      background: radial-gradient(circle at top left, #7b2ff7, #591885);
+      background: radial-gradient(circle at top left, #6833ad, #3b0086, #240052, #000000);
       margin: 0;
       width: 100%;
       aspect-ratio: 15 / 7;
@@ -53,6 +53,13 @@
     }
     .coluna div#banner-patrocinadores {
       font-size: 1vw;
+      position: relative;
+    }
+    .coluna p#proex {
+      font-size: 0.4vw;
+      margin-top: -1vw;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
     }
 
     .linha {
@@ -62,7 +69,6 @@
       gap: 10px; /* controla o espaço entre os dois elementos */
       /* border: 3px dashed white; */
     }
-
     .linha#logosmfs
     {
       font-size: 6vw;
@@ -86,11 +92,21 @@
       border: 2px dashed white;
     }
     .linha#banner-patrocinadores svg, img {
-      block-size: 2vw;
-      margin: 0;
-      padding: 0;
+      object-fit: contain;       /* garante ajuste de conteúdo sem distorção */
       border: 2px dashed red;
-      width: auto;
+      margin: 0 -0.5vw;
+      display: block;
+    }
+    .linha#banner-patrocinadores svg#square, img#square {
+      position: inherit;
+      height: 4vw;
+      aspect-ratio: 1;
+    }
+    .linha#banner-patrocinadores svg#rect, img#rect {
+      position: inherit;
+      height: 4vw;
+      aspect-ratio: 16/9;
+      font-size: 1vw;
     }
 
 
@@ -110,7 +126,7 @@
 </head>
 <body class="bg-gray-100 p-6">
 
-  <div style="" class="banner-fundo">
+  <div style="border: 1px dashed yellow;" class="banner-fundo">
 
     <div class="coluna">
       <p id="p1">Sejam bem-vindos à</p>
@@ -135,14 +151,17 @@
       <div id="banner-patrocinadores">
         <p>Realização:</p>
         <div class="linha" id="banner-patrocinadores">
-           <svg style="fill: white; color: white;">
+          <svg style="fill: white; color: white;" id="square">
             <use href="assets/vectors/sprite-uefs.svg#dafis"></use>
           </svg>
-          <img src="assets/icons/ostra.png" alt="">
-          <svg>
-            <use href="assets/vectors/sprite-uefs.svg#proex"></use>
-          </svg>
-          <img src="1" alt="">
+          <img src="assets/icons/ostra.png" alt="" id="square">
+          <img src="assets/icons/uefs.gif" alt="" id="square">
+          <div class="coluna">
+            <svg id="rect">
+              <use href="assets/vectors/sprite-uefs.svg#proex"></use>
+            </svg>
+            <p id="proex">PRÓ-REITORIA DE EXTENSÃO | UEFS</p>
+          </div>
         </div>
       </div>
         
