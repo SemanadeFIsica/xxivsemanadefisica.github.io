@@ -93,6 +93,212 @@
     </p>
 </div>
 
+<!-- Slider de Palestrantes -->
+
+<div id="slider-wrapper">
+    <style>
+        #slider-wrapper {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 0;
+            box-shadow: none;
+            background-color: transparent;
+        }
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            cursor: grab; /* Indica que o elemento pode ser arrastado */
+            user-select: none; /* Impede a seleção de texto/elementos dentro */
+        }
+        .slide-wrapper {
+            display: flex;
+            width: 100%;
+            transition: transform 0.4s ease-in-out;
+        }
+        .slide {
+            flex: 0 0 100%;
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .slide img {
+            display: block;
+            width: auto;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            user-select: none; /* Impede a seleção da imagem ao arrastar */
+        }
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none; /* Mantém para evitar interação com os botões por baixo */
+        }
+        .control-button {
+            background: rgba(255, 255, 255, 0.5);
+            color: #333;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.2s ease;
+            padding: 8px 15px;
+            border-radius: 10px;
+            pointer-events: auto;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0 10px;
+        }
+        .control-button:hover {
+            opacity: 1;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #007bff;
+        }
+        .textoslide2 {
+            font-size: 50px;
+            margin-bottom: -100px;
+            white-space: nowrap;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+    <div class="textoslide2"> <h2>Palestrante do Dia</h2></div>
+
+    <div class="slider-container" id="sliderContainer">
+        <div class="slide-wrapper" id="slideWrapper">
+            <div class="slide"><img src="assets/slider2/vertical/8.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="assets/slider2/vertical/9.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="assets/slider2/vertical/10.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="assets/slider2/vertical/11.jpg" alt="Slide 4"></div>
+            <div class="slide"><img src="assets/slider2/vertical/12.jpg" alt="Slide 5"></div>
+            <div class="slide"><img src="assets/slider2/vertical/13.jpg" alt="Slide 6"></div>
+            <div class="slide"><img src="assets/slider2/vertical/14.jpg" alt="Slide 7"></div>
+            <div class="slide"><img src="assets/slider2/vertical/15.jpg" alt="Slide 8"></div>
+            <div class="slide"><img src="assets/slider2/vertical/16.jpg" alt="Slide 9"></div>
+        </div>
+        <div class="slider-controls">
+            <button class="control-button" onclick="prevSlide()">❮</button>
+            <button class="control-button" onclick="nextSlide()">❯</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const sliderWrapperDiv = document.getElementById('slider-wrapper');
+    const sliderContainer = document.getElementById('sliderContainer');
+    const slideWrapper = document.getElementById('slideWrapper');
+    const slides = sliderWrapperDiv.querySelectorAll('.slide');
+    const slideCount = slides.length;
+    let currentIndex = 0;
+    let isDragging = false;
+    let startX = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID = null;
+
+    function updateSlider(position) {
+        slideWrapper.style.transform = `translateX(${position}px)`;
+    }
+
+    function setPosition() {
+        slideWrapper.style.transition = 'transform 0.4s ease-out';
+        updateSlider(currentIndex * -sliderContainer.offsetWidth);
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            setPosition();
+        }
+    }
+
+    function nextSlide() {
+        if (currentIndex < slideCount - 1) {
+            currentIndex++;
+            setPosition();
+        }
+    }
+
+    function getPositionX(event) {
+        return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
+    }
+
+    function dragStart(event) {
+        isDragging = true;
+        startX = getPositionX(event);
+        currentTranslate = prevTranslate;
+        slideWrapper.classList.remove('transition');
+
+        if (animationID) {
+            cancelAnimationFrame(animationID);
+            animationID = null;
+        }
+    }
+
+    function dragging(event) {
+        if (!isDragging) return;
+
+        const currentX = getPositionX(event);
+        const diffX = currentX - startX;
+        currentTranslate = prevTranslate + diffX;
+        updateSlider(currentTranslate);
+    }
+
+    function dragEnd() {
+        if (!isDragging) {
+            return; // Se não houve arrasto, não faça nada
+        }
+
+        isDragging = false;
+
+        const movedBy = currentTranslate - prevTranslate;
+        const threshold = sliderContainer.offsetWidth / 5; // Mantenha o threshold para determinar a mudança
+
+        if (movedBy < -threshold && currentIndex < slideCount - 1) {
+            currentIndex++;
+        } else if (movedBy > threshold && currentIndex > 0) {
+            currentIndex--;
+        }
+
+        setPosition();
+        slideWrapper.classList.add('transition');
+        prevTranslate = currentIndex * -sliderContainer.offsetWidth;
+    }
+
+    // Adiciona listeners para mouse
+    sliderContainer.addEventListener('mousedown', dragStart);
+    document.addEventListener('mouseup', dragEnd);
+    document.addEventListener('mousemove', dragging);
+
+    // Adiciona listeners para touch
+    sliderContainer.addEventListener('touchstart', dragStart);
+    document.addEventListener('touchend', dragEnd);
+    document.addEventListener('touchmove', dragging);
+
+    // Inicializa o slider
+    updateSlider(0);
+    prevTranslate = 0;
+</script>
+
+
 <!--               Inicio do Icones                     -->
 
 <section class="icons">
