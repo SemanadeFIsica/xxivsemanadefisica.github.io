@@ -24,9 +24,10 @@
     .banner-fundo {
       /* background: linear-gradient(135deg, rgb(114, 0, 250), rgba(39, 38, 42, 1)); */
       background: radial-gradient(circle at top left, #6833ad, #3b0086, #240052, #000000);
-      margin: 0;
       width: 100%;
-      aspect-ratio: 15 / 7;
+      margin: 0;
+      aspect-ratio: 15/7;
+      position: relative;
     }
 
     .coluna {
@@ -40,7 +41,7 @@
     }
 
     .coluna p#p1{
-      padding-top: 9vw;
+      padding-top: 5vw;
       font-size: 4vw;
     }
     .coluna p#p2{
@@ -66,7 +67,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px; /* controla o espaço entre os dois elementos */
+      gap: 1vw; /* controla o espaço entre os dois elementos */
       /* border: 3px dashed white; */
     }
     .linha#logosmfs
@@ -122,13 +123,87 @@
     .item-direita, .item-esquerda {
       /* border: 5px dashed red; */
     }
+    .cutout {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 8vw; /* Controla do corte */
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 0vw; /* Desloca a linha inteira */
+      border: 1px aqua dashed;
+    }
+
+    .cutout .linha {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 0; /* gap negativo não tem efeito em Flexbox */
+      transform: translateY(-2vw); /* desloca os svg internamente */
+      scale: 1.3;
+    }
+
+    .cutout svg {
+      height: auto;
+      width: 50vw;
+      max-width: 60vw;
+      aspect-ratio: 16 / 9;
+      fill: white;
+    }
+    .ajuste-svg-c12 {
+      transform: scale(-1) translateY(1.2vw) translateX(0.1vw);
+    }
+
+    .cutout-canto {
+      position: absolute;
+      bottom: 0;
+      width: 22vw; /* tamanho do svg */
+      height: 25vw; /* controla o corte */
+      overflow: hidden;
+      pointer-events: none;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .cutout-canto svg {
+      width: 150%; /* escala leve */
+      height: auto;
+      aspect-ratio: 16/9;
+      fill: white;
+      transform: translateY(-5vw) scale(2);
+    }
+
+    /* Posicionamentos específicos */
+    .canto-esquerdo {
+      transform: translateY(4vw) translateX(-13vw) scale(4) rotate(-90deg) !important;
+    }
+
+    .canto-direito {
+      transform: translateY(5vw) translateX(15vw) scale(4) rotate(40deg) !important;
+    }
   </style>
 </head>
 <body class="bg-gray-100 p-6">
 
   <div style="border: 1px dashed yellow;" class="banner-fundo">
-
     <div class="coluna">
+
+      <div class="cutout">
+        <div class="linha">
+          <svg>
+            <use href="assets/vectors/sprite.svg#3"></use>
+          </svg>
+          <svg class="ajuste-svg-c12">
+            <use href="assets/vectors/sprite.svg#3"></use>
+          </svg>
+        </div>
+      </div>
+
+      <!-- <img src="assets/vectors/g3114.png" style="padding-top: 5vw; width: 50vw; border: 1px dashed yellow; margin: -10vw;" alt=""> -->
       <p id="p1">Sejam bem-vindos à</p>
 
       <div class="linha" id="logosmfs">
@@ -163,6 +238,19 @@
             <p id="proex">PRÓ-REITORIA DE EXTENSÃO | UEFS</p>
           </div>
         </div>
+      </div>
+
+      <div style="left: 0;" class="cutout-canto">
+        <svg class="canto-esquerdo">
+          <use href="assets/vectors/sprite.svg#1"></use>
+        </svg>
+      </div>
+
+      <!-- SVG canto inferior direito -->
+      <div style="right: 0;" class="cutout-canto ">
+        <svg class="canto-direito">
+          <use href="assets/vectors/sprite.svg#2"></use>
+        </svg>
       </div>
         
     </div>
