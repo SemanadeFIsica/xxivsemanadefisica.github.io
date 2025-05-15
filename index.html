@@ -5,349 +5,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XXIV Semana de Física</title>
     <link rel="stylesheet" href="semanadefisica.css">
+    <link rel="stylesheet" href="assets/css/banner-style.css">
+    <link rel="stylesheet" href="assets/css/event-schedule.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      .star { color: gold; }
+      .hidden {
+        display: none;
+      }
+    </style>
 </head>
 
 <body class="fade-in">
 
-<!--               Inicio do menu                     -->
+  <!--               Inicio do menu                     -->
 
-<nav>
-    <button class="menu-toggle" id="menuToggle">
-        <i class="fas fa-bars"></i>
-    </button>
-    <ul class="menu-collapse" id="menuCollapse">
-        <li><a href="#" aria-current="page">Início</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropbtn">Dicas</a>
-            <div class="dropdown-content">
-                <a href="#">Fisica</a>
-                <a href="#">Mecanica</a>
-                <a href="#">Relatividade</a>
-            </div>
-        </li>
-        <li><a href="#">Sobre Nós</a></li>
-        <li><a href="#">Contato</a></li>
-    </ul>
-</nav>
+  <nav>
+      <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+      </button>
+      <ul class="menu-collapse" id="menuCollapse">
+          <li><a href="#" aria-current="page">Início</a></li>
+          <li class="dropdown">
+              <a href="#" class="dropbtn">Dicas</a>
+              <div class="dropdown-content">
+                  <a href="#">Fisica</a>
+                  <a href="#">Mecanica</a>
+                  <a href="#">Relatividade</a>
+              </div>
+          </li>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">Contato</a></li>
+      </ul>
+  </nav>
 
-<!--               Fim do menu                     -->
+  <!--               Fim do menu                     -->
 
-<!--               Inicio do slide                     -->
+  <!--               Inicio do slide                     -->
 
-<section class="about">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-                <img src="assets/slider/2.jpg" alt="Slide 1">
-                <section class="x">
-                    <div class="text slider">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDLsL21sreusDa3pY2f7gl8V-HRqEzj3IHXBrvFbgqp5jEJQ/viewform?usp=header"
-                        class="btn btn-white btn-animate garet-heavy">
-                            Inscreva-se Agora!
-                        </a>
-                    </div>
-                </section>
-            </div>
+  <div style="" class="banner-fundo">
+    <div class="coluna">
 
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-                <img src="assets/slider/1.jpg" alt="Slide 2">
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-                <img src="assets/slider/3.jpg" alt="Slide 3">
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="swiper-slide">
-                <img src="assets/slider/4.jpg" alt="Slide 3">
-            </div>
-
-            <!-- Slide 5 -->
-            <div class="swiper-slide">
-                <img src="assets/slider/5.jpg" alt="Slide 3">
-            </div>
+      <div class="cutout" id="curvas-1">
+        <div class="linha">
+          <svg>
+            <use href="assets/vectors/sprite.svg#3"></use>
+          </svg>
+          <svg class="ajuste-svg-c12">
+            <use href="assets/vectors/sprite.svg#3"></use>
+          </svg>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <!-- <div class="swiper-pagination"></div> -->
+      </div>
+
+      <!-- <img src="assets/vectors/g3114.png" style="padding-top: 5vw; width: 50vw; border: 1px dashed yellow; margin: -10vw;" alt=""> -->
+      <p id="p1">Sejam bem-vindos à</p>
+
+      <div class="linha" id="logosmfs">
+
+        <svg class="item-esquerda" id="logo-item">
+          <use href="assets/vectors/sprite.svg#vector-4"></use>
+        </svg>
+
+        <div class="coluna" id="logo-item">
+          <h1 class="item-direita desktop-banner">XXIV Semana de Física</h1>
+          <h1 class="item-direita mobile-banner">XXIV</h1>
+          <h1 class="item-direita mobile-banner" id="h12">Semana de Física</h1>
+          <p>De Newton ao Networking: A Física e suas diferentes áreas de atuação</p>
+        </div>
+
+      </div>
+      <div id="info">
+        <p>Data: 26 a 28 de Maio</p>
+        <p>Local: Auditório do Módulo 4</p>
+      </div>
+
+      <div id="banner-patrocinadores">
+        <p>Realização:</p>
+        <div class="linha" id="banner-patrocinadores">
+          <svg style="fill: white; color: white;" id="square">
+            <use href="assets/vectors/sprite-uefs.svg#dafis"></use>
+          </svg>
+          <img src="assets/icons/ostra.png" alt="" id="square">
+          <img src="assets/icons/uefs.gif" alt="" id="square">
+          <div class="coluna">
+            <svg id="rect">
+              <use href="assets/vectors/sprite-uefs.svg#proex"></use>
+            </svg>
+            <p id="proex">PRÓ-REITORIA DE EXTENSÃO | UEFS</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="left: 0;" class="cutout-canto">
+        <svg class="canto-esquerdo">
+          <use href="assets/vectors/sprite.svg#1"></use>
+        </svg>
+      </div>
+
+      <section class="x">
+          <div class="text slider">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDLsL21sreusDa3pY2f7gl8V-HRqEzj3IHXBrvFbgqp5jEJQ/viewform?usp=header"
+              class="btn btn-white btn-animate garet-heavy">
+                  Inscreva-se Agora!
+              </a>
+          </div>
+      </section>
+      <!-- SVG canto inferior direito -->
+      <div style="right: 0;" class="cutout-canto" id="inferior-direito">
+        <svg class="canto-direito">
+          <use href="assets/vectors/sprite.svg#2"></use>
+        </svg>
+      </div>
+        
     </div>
-</section>
-<!--               Fim do slide                     -->
+  </div>
 
-<div class="contents">
-    <h1 class="telegraf-ultrabold">Sobre a Semana de Física</h1>
-    <p class="garet-book">
-        A Semana de Física da UEFS (Universidade Estadual de Feira de Santana) 
-        é um evento acadêmico e científico que reúne estudantes, professores 
-        e pesquisadores para discutir temas atuais e relevantes da Física. A 
-        programação costuma incluir palestras, minicursos, oficinas, apresentações 
-        de trabalhos e mesas-redondas, promovendo o intercâmbio de conhecimento e a 
-        valorização da ciência. Além disso, o evento proporciona um espaço importante 
-        para a divulgação científica e para o fortalecimento da comunidade acadêmica, 
-        incentivando o pensamento crítico e o interesse pela pesquisa.
-    </p>
-</div>
+  <!-- Texto sobre o evento -->
+  <section class="cont-txt">
+    <h1 class="text-3xl font-bold mb-4">Sobre a Semana de Física</h1>
+    <p class="text-justify">
+          A Semana de Física da UEFS (Universidade Estadual de Feira de Santana) 
+          é um evento acadêmico e científico que reúne estudantes, professores 
+          e pesquisadores para discutir temas atuais e relevantes da Física. A 
+          programação costuma incluir palestras, minicursos, oficinas, apresentações 
+          de trabalhos e mesas-redondas, promovendo o intercâmbio de conhecimento e a 
+          valorização da ciência. Além disso, o evento proporciona um espaço importante 
+          para a divulgação científica e para o fortalecimento da comunidade acadêmica, 
+          incentivando o pensamento crítico e o interesse pela pesquisa.
+      </p>
+  </section>
 
-<!-- Slider de Palestrantes -->
+  <!--               Inicio do Icones                     -->
 
-<div id="slider-wrapper">
-    <style>
-        #slider-wrapper {
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-radius: 0;
-            box-shadow: none;
-            background-color: transparent;
-        }
-        .slider-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin-bottom: 20px;
-            cursor: grab; /* Indica que o elemento pode ser arrastado */
-            user-select: none; /* Impede a seleção de texto/elementos dentro */
-        }
-        .slide-wrapper {
-            display: flex;
-            width: 100%;
-            transition: transform 0.4s ease-in-out;
-        }
-        .slide {
-            flex: 0 0 100%;
-            min-width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        .slide img {
-            display: block;
-            width: auto;
-            max-width: 600px;
-            height: auto;
-            border-radius: 8px;
-            user-select: none; /* Impede a seleção da imagem ao arrastar */
-        }
-        .slider-controls {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            pointer-events: none; /* Mantém para evitar interação com os botões por baixo */
-        }
-        .control-button {
-            background: rgba(255, 255, 255, 0.5);
-            color: #333;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: opacity 0.3s ease, transform 0.2s ease;
-            padding: 8px 15px;
-            border-radius: 10px;
-            pointer-events: auto;
-            text-decoration: none;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin: 0 10px;
-        }
-        .control-button:hover {
-            opacity: 1;
-            transform: scale(1.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            color: #007bff;
-        }
-        .textoslide2 {
-            font-size: 50px;
-            margin-bottom: -100px;
-            white-space: nowrap;
-            text-align: center;
-            width: 100%;
-        }
-    </style>
-    <div class="textoslide2"> <h2>Palestrante do Dia</h2></div>
+  <section class="icons">
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/1.png" alt="Ensino"><p>Ensino</p>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/2.png" alt="Tecnologia"><p>Tecnologia</p>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/3.png" alt="Energia"><p>Energia</p>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/4.png" alt="Indústria"><p>Indústria</p>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/5.png" alt="Medicina"><p>Medicina</p>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/6.png" alt="Astronomia"><p>Astronomia</p>
+            </a>
+          </div>
+  </section>
 
-    <div class="slider-container" id="sliderContainer">
-        <div class="slide-wrapper" id="slideWrapper">
-            <div class="slide"><img src="assets/slider2/vertical/18.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="assets/slider2/vertical/19.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="assets/slider2/vertical/20.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="assets/slider2/vertical/21.jpg" alt="Slide 4"></div>
-            <div class="slide"><img src="assets/slider2/vertical/22.jpg" alt="Slide 5"></div>
-            <div class="slide"><img src="assets/slider2/vertical/23.jpg" alt="Slide 6"></div>
-            <div class="slide"><img src="assets/slider2/vertical/24.jpg" alt="Slide 7"></div>
-            <div class="slide"><img src="assets/slider2/vertical/25.jpg" alt="Slide 8"></div>
-            <div class="slide"><img src="assets/slider2/vertical/26.jpg" alt="Slide 9"></div>
-        </div>
-        <div class="slider-controls">
-            <button class="control-button" onclick="prevSlide()">❮</button>
-            <button class="control-button" onclick="nextSlide()">❯</button>
-        </div>
-    </div>
-</div>
+  <!--               Fim dos icones                     -->
 
-<script>
-    const sliderWrapperDiv = document.getElementById('slider-wrapper');
-    const sliderContainer = document.getElementById('sliderContainer');
-    const slideWrapper = document.getElementById('slideWrapper');
-    const slides = sliderWrapperDiv.querySelectorAll('.slide');
-    const slideCount = slides.length;
-    let currentIndex = 0;
-    let isDragging = false;
-    let startX = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    let animationID = null;
+  <!--               Inicio do rodape                     -->
 
-    function updateSlider(position) {
-        slideWrapper.style.transform = `translateX(${position}px)`;
-    }
+  <footer>
+    <div class="garet-book">© 2025 Semana de Física</div>
+  </footer>
+  <!--               Fim do rodape                     -->
 
-    function setPosition() {
-        slideWrapper.style.transition = 'transform 0.4s ease-out';
-        updateSlider(currentIndex * -sliderContainer.offsetWidth);
-    }
+  <!--               chamada do arquivo js                     -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/banner-js.js"></script>
 
-    function prevSlide() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            setPosition();
-        }
-    }
-
-    function nextSlide() {
-        if (currentIndex < slideCount - 1) {
-            currentIndex++;
-            setPosition();
-        }
-    }
-
-    function getPositionX(event) {
-        return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
-    }
-
-    function dragStart(event) {
-        isDragging = true;
-        startX = getPositionX(event);
-        currentTranslate = prevTranslate;
-        slideWrapper.classList.remove('transition');
-
-        if (animationID) {
-            cancelAnimationFrame(animationID);
-            animationID = null;
-        }
-    }
-
-    function dragging(event) {
-        if (!isDragging) return;
-
-        const currentX = getPositionX(event);
-        const diffX = currentX - startX;
-        currentTranslate = prevTranslate + diffX;
-        updateSlider(currentTranslate);
-    }
-
-    function dragEnd() {
-        if (!isDragging) {
-            return; // Se não houve arrasto, não faça nada
-        }
-
-        isDragging = false;
-
-        const movedBy = currentTranslate - prevTranslate;
-        const threshold = sliderContainer.offsetWidth / 5; // Mantenha o threshold para determinar a mudança
-
-        if (movedBy < -threshold && currentIndex < slideCount - 1) {
-            currentIndex++;
-        } else if (movedBy > threshold && currentIndex > 0) {
-            currentIndex--;
-        }
-
-        setPosition();
-        slideWrapper.classList.add('transition');
-        prevTranslate = currentIndex * -sliderContainer.offsetWidth;
-    }
-
-    // Adiciona listeners para mouse
-    sliderContainer.addEventListener('mousedown', dragStart);
-    document.addEventListener('mouseup', dragEnd);
-    document.addEventListener('mousemove', dragging);
-
-    // Adiciona listeners para touch
-    sliderContainer.addEventListener('touchstart', dragStart);
-    document.addEventListener('touchend', dragEnd);
-    document.addEventListener('touchmove', dragging);
-
-    // Inicializa o slider
-    updateSlider(0);
-    prevTranslate = 0;
-</script>
-
-
-<!--               Inicio do Icones                     -->
-
-<section class="icons">
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/1.png" alt="Ensino"><p>Ensino</p>
-           </a>
-        </div>
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/2.png" alt="Tecnologia"><p>Tecnologia</p>
-           </a>
-        </div>
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/3.png" alt="Energia"><p>Energia</p>
-           </a>
-        </div>
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/4.png" alt="Indústria"><p>Indústria</p>
-           </a>
-        </div>
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/5.png" alt="Medicina"><p>Medicina</p>
-           </a>
-        </div>
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/6.png" alt="Astronomia"><p>Astronomia</p>
-           </a>
-        </div>
-</section>
-
-<!--               Fim dos icones                     -->
-
-<!--               Inicio do rodape                     -->
-
-<footer>
-        <div class="fundo-rodape"></div>
-</footer>
-<!--               Fim do rodape                     -->
-
-<!--               chamada do arquivo js                     -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="script.js"></script>
-
-<!--               fim da chamada do arquivo js                    -->
+  <!--               fim da chamada do arquivo js                    -->
 
 </body>
 </html>

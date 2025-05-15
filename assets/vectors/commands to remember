@@ -1,0 +1,5 @@
+svgo one.svg two.svg -o one.min.svg two.min.svg
+svg-sprite --symbol --symbol-dest . --symbol-sprite sprite.svg *.svg
+
+sed -i s/style="[^"]*"/fill="currentColor"/g sprite.svg
+echo "sua nova linha" >> arquivo.txt
