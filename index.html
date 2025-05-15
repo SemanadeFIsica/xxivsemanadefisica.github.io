@@ -5,131 +5,171 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XXIV Semana de Física</title>
     <link rel="stylesheet" href="semanadefisica.css">
+    <link rel="stylesheet" href="assets/css/banner-style.css">
+    <link rel="stylesheet" href="assets/css/event-schedule.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
       .star { color: gold; }
+      .hidden {
+        display: none;
+      }
     </style>
 </head>
 
 <body class="fade-in">
 
-<!--               Inicio do menu                     -->
+  <!--               Inicio do menu                     -->
 
-<nav>
-    <button class="menu-toggle" id="menuToggle">
-        <i class="fas fa-bars"></i>
-    </button>
-    <ul class="menu-collapse" id="menuCollapse">
-        <li><a href="#" aria-current="page">Início</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropbtn">Dicas</a>
-            <div class="dropdown-content">
-                <a href="#">Fisica</a>
-                <a href="#">Mecanica</a>
-                <a href="#">Relatividade</a>
-            </div>
-        </li>
-        <li><a href="#">Sobre Nós</a></li>
-        <li><a href="#">Contato</a></li>
-    </ul>
-</nav>
+  <nav>
+      <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+      </button>
+      <ul class="menu-collapse" id="menuCollapse">
+          <li><a href="#" aria-current="page">Início</a></li>
+          <li class="dropdown">
+              <a href="#" class="dropbtn">Dicas</a>
+              <div class="dropdown-content">
+                  <a href="#">Fisica</a>
+                  <a href="#">Mecanica</a>
+                  <a href="#">Relatividade</a>
+              </div>
+          </li>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">Contato</a></li>
+      </ul>
+  </nav>
 
-<!--               Fim do menu                     -->
+  <!--               Fim do menu                     -->
 
-<!--               Inicio do slide                     -->
+  <!--               Inicio do slide                     -->
 
-<section class="about">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-                <img src="assets/slider/2.jpg" alt="Slide 1">
-                <section class="x">
-                    <div class="text slider">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDLsL21sreusDa3pY2f7gl8V-HRqEzj3IHXBrvFbgqp5jEJQ/viewform?usp=header"
-                        class="btn btn-white btn-animate garet-heavy">
-                            Inscreva-se Agora!
-                        </a>
-                    </div>
-                </section>
-            </div>
+  <div style="" class="banner-fundo">
+    <div class="coluna">
 
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-                <img src="assets/slider/1.jpg" alt="Slide 2">
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-                <img src="assets/slider/3.jpg" alt="Slide 3">
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="swiper-slide">
-                <img src="assets/slider/4.jpg" alt="Slide 3">
-            </div>
-
-            <!-- Slide 5 -->
-            <div class="swiper-slide">
-                <img src="assets/slider/5.jpg" alt="Slide 3">
-            </div>
+      <div class="cutout" id="curvas-1">
+        <div class="linha">
+          <svg>
+            <use href="assets/vectors/sprite.svg#3"></use>
+          </svg>
+          <svg class="ajuste-svg-c12">
+            <use href="assets/vectors/sprite.svg#3"></use>
+          </svg>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <!-- <div class="swiper-pagination"></div> -->
+      </div>
+
+      <!-- <img src="assets/vectors/g3114.png" style="padding-top: 5vw; width: 50vw; border: 1px dashed yellow; margin: -10vw;" alt=""> -->
+      <p id="p1">Sejam bem-vindos à</p>
+
+      <div class="linha" id="logosmfs">
+
+        <svg class="item-esquerda" id="logo-item">
+          <use href="assets/vectors/sprite.svg#vector-4"></use>
+        </svg>
+
+        <div class="coluna" id="logo-item">
+          <h1 class="item-direita desktop-banner">XXIV Semana de Física</h1>
+          <h1 class="item-direita mobile-banner">XXIV</h1>
+          <h1 class="item-direita mobile-banner" id="h12">Semana de Física</h1>
+          <p>De Newton ao Networking: A Física e suas diferentes áreas de atuação</p>
+        </div>
+
+      </div>
+      <div id="info">
+        <p>Data: 26 a 28 de Maio</p>
+        <p>Local: Auditório do Módulo 4</p>
+      </div>
+
+      <div id="banner-patrocinadores">
+        <p>Realização:</p>
+        <div class="linha" id="banner-patrocinadores">
+          <svg style="fill: white; color: white;" id="square">
+            <use href="assets/vectors/sprite-uefs.svg#dafis"></use>
+          </svg>
+          <img src="assets/icons/ostra.png" alt="" id="square">
+          <img src="assets/icons/uefs.gif" alt="" id="square">
+          <div class="coluna">
+            <svg id="rect">
+              <use href="assets/vectors/sprite-uefs.svg#proex"></use>
+            </svg>
+            <p id="proex">PRÓ-REITORIA DE EXTENSÃO | UEFS</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="left: 0;" class="cutout-canto">
+        <svg class="canto-esquerdo">
+          <use href="assets/vectors/sprite.svg#1"></use>
+        </svg>
+      </div>
+
+      <section class="x">
+          <div class="text slider">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDLsL21sreusDa3pY2f7gl8V-HRqEzj3IHXBrvFbgqp5jEJQ/viewform?usp=header"
+              class="btn btn-white btn-animate garet-heavy">
+                  Inscreva-se Agora!
+              </a>
+          </div>
+      </section>
+      <!-- SVG canto inferior direito -->
+      <div style="right: 0;" class="cutout-canto" id="inferior-direito">
+        <svg class="canto-direito">
+          <use href="assets/vectors/sprite.svg#2"></use>
+        </svg>
+      </div>
+        
     </div>
-</section>
-<!--               Fim do slide                     -->
-
-<!-- Texto sobre o evento -->
-<section class="cont-txt">
-  <h1 class="text-3xl font-bold mb-4">Sobre a Semana de Física</h1>
-  <p class="text-justify">
-        A Semana de Física da UEFS (Universidade Estadual de Feira de Santana) 
-        é um evento acadêmico e científico que reúne estudantes, professores 
-        e pesquisadores para discutir temas atuais e relevantes da Física. A 
-        programação costuma incluir palestras, minicursos, oficinas, apresentações 
-        de trabalhos e mesas-redondas, promovendo o intercâmbio de conhecimento e a 
-        valorização da ciência. Além disso, o evento proporciona um espaço importante 
-        para a divulgação científica e para o fortalecimento da comunidade acadêmica, 
-        incentivando o pensamento crítico e o interesse pela pesquisa.
-    </p>
-</section>
-
-
-<section class="cont-txt">
-  <div>
-    <h1>Dia 1</h1>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
   </div>
+
+  <!-- Texto sobre o evento -->
+  <section class="cont-txt">
+    <h1 class="text-3xl font-bold mb-4">Sobre a Semana de Física</h1>
+    <p class="text-justify">
+          A Semana de Física da UEFS (Universidade Estadual de Feira de Santana) 
+          é um evento acadêmico e científico que reúne estudantes, professores 
+          e pesquisadores para discutir temas atuais e relevantes da Física. A 
+          programação costuma incluir palestras, minicursos, oficinas, apresentações 
+          de trabalhos e mesas-redondas, promovendo o intercâmbio de conhecimento e a 
+          valorização da ciência. Além disso, o evento proporciona um espaço importante 
+          para a divulgação científica e para o fortalecimento da comunidade acadêmica, 
+          incentivando o pensamento crítico e o interesse pela pesquisa.
+      </p>
+  </section>
+
+
+  <section class="cont-txt event-schedule">
+    <div>
+      <h1>Dia 1</h1>
+      <div id="schedule-cont">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+      </div>
+    </div>
+  </section>
+  
   <!-- Slider de Palestrantes -->
   <section class="palestrantes">
     <h2 class="telegraf-ultrabold">Palestrantes em Destaque</h2>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide palestrante-card" style="background-color: red; border-radius: 10px;" 
-        onclick="mostrarDetalhes(this)" 
-        data-nome="João Silva" 
-        data-bio="João é especialista em inovação tecnológica com 10 anos de experiência em startups." 
-        data-foto="https://via.placeholder.com/150">
+        <div class="swiper-slide palestrante-card" onclick="mostrarDetalhes(this)" data-nome="João Silva" data-bio="João é especialista em inovação tecnológica com 10 anos de experiência em startups." data-foto="https://via.placeholder.com/150">
           <img src="https://via.placeholder.com/150" alt="João">
           <h3>João Silva</h3>
-          <div class="estrelas">★ ★ ★ ★ <span style="color: #ccc;">★</span></div>
+          <!-- <div class="estrelas">★ ★ ★ ★ <span class="text-gray-300">★</span></div> -->
         </div>
 
         <!-- Outros slides -->
       </div>
     </div>
 
+    
     <div id="detalhes" class="detalhes hidden">
       <div class="detalhes-container">
-        <img id="detalhe-foto" src="">
+        <img id="detalhe-foto" src="" alt="Foto do palestrante">
         <div>
           <h3 id="detalhe-nome"></h3>
           <p id="detalhe-bio"></p>
@@ -137,57 +177,58 @@
       </div>
     </div>
   </section>
-</section>
 
-<!--               Inicio do Icones                     -->
+  <!--               Inicio do Icones                     -->
 
-<section class="icons">
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/1.png" alt="Ensino"><p>Ensino</p>
-           </a>
-        </div>
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/2.png" alt="Tecnologia"><p>Tecnologia</p>
-           </a>
-        </div>
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/3.png" alt="Energia"><p>Energia</p>
-           </a>
-        </div>
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/4.png" alt="Indústria"><p>Indústria</p>
-           </a>
-        </div>
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/5.png" alt="Medicina"><p>Medicina</p>
-           </a>
-        </div>
-        <div class="icon">
-           <a href="#" >
-             <img src="assets/icons/6.png" alt="Astronomia"><p>Astronomia</p>
-           </a>
-        </div>
-</section>
+  <section class="icons">
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/1.png" alt="Ensino"><p>Ensino</p>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/2.png" alt="Tecnologia"><p>Tecnologia</p>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/3.png" alt="Energia"><p>Energia</p>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/4.png" alt="Indústria"><p>Indústria</p>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/5.png" alt="Medicina"><p>Medicina</p>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="#" >
+              <img src="assets/icons/6.png" alt="Astronomia"><p>Astronomia</p>
+            </a>
+          </div>
+  </section>
 
-<!--               Fim dos icones                     -->
+  <!--               Fim dos icones                     -->
 
-<!--               Inicio do rodape                     -->
+  <!--               Inicio do rodape                     -->
 
-<footer>
-  <div class="garet-book">© 2025 Semana de Física</div>
-</footer>
-<!--               Fim do rodape                     -->
+  <footer>
+    <div class="garet-book">© 2025 Semana de Física</div>
+  </footer>
+  <!--               Fim do rodape                     -->
 
-<!--               chamada do arquivo js                     -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="script.js"></script>
+  <!--               chamada do arquivo js                     -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/banner-js.js"></script>
 
-<!--               fim da chamada do arquivo js                    -->
+  <!--               fim da chamada do arquivo js                    -->
 
 </body>
 

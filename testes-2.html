@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XXIV Semana de Física</title>
+  <link rel="stylesheet" href="semanadefisica.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .star { color: gold; }
+  </style>
+</head>
+
+<body class="fade-in">
+
+  <!-- Navegação -->
+  <nav class="nav">
+    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    <ul class="menu">
+      <li><a href="#">Início</a></li>
+      <li class="dropdown">
+        <a href="#">Dicas</a>
+        <div class="dropdown-content">
+          <a href="#">Física</a>
+          <a href="#">Mecânica</a>
+          <a href="#">Relatividade</a>
+        </div>
+      </li>
+      <li><a href="#">Sobre Nós</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Slide principal -->
+  <section class="about">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="assets/slider/2.jpg" alt="Slide 1">
+          <div class="slider-button-container">
+            <a href="https://docs.google.com/forms/..." class="btn btn-white garet-heavy">Inscreva-se Agora!</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/slider/1.jpg" alt="Slide 2">
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/slider/banner segundafeira.jpg" alt="Slide 3">
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <!-- Texto sobre o evento -->
+  <section class="cont-txt">
+    <h1 class="telegraf-ultrabold">Sobre a Semana de Física</h1>
+    <p class="garet-book">
+      A Semana de Física da UEFS (Universidade Estadual de Feira de Santana) é um evento acadêmico e científico que reúne estudantes, professores e pesquisadores para discutir temas atuais e relevantes da Física. A programação costuma incluir palestras, minicursos, oficinas, apresentações de trabalhos e mesas-redondas, promovendo o intercâmbio de conhecimento e a valorização da ciência. Além disso, o evento proporciona um espaço importante para a divulgação científica e para o fortalecimento da comunidade acadêmica, incentivando o pensamento crítico e o interesse pela pesquisa.
+    </p>
+  </section>
+
+  <!-- Slider de Palestrantes -->
+  <section class="palestrantes">
+    <h2 class="telegraf-ultrabold">Palestrantes em Destaque</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide palestrante-card" onclick="mostrarDetalhes(this)" data-nome="João Silva" data-bio="João é especialista em inovação tecnológica com 10 anos de experiência em startups." data-foto="https://via.placeholder.com/150">
+          <img src="https://via.placeholder.com/150" alt="João">
+          <h3>João Silva</h3>
+          <div class="estrelas">★ ★ ★ ★ <span class="text-gray-300">★</span></div>
+        </div>
+
+        <!-- Outros slides -->
+      </div>
+    </div>
+
+    <div id="detalhes" class="detalhes hidden">
+      <div class="detalhes-container">
+        <img id="detalhe-foto" src="" alt="Foto do palestrante">
+        <div>
+          <h3 id="detalhe-nome"></h3>
+          <p id="detalhe-bio"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ícones de áreas -->
+  <section class="icons">
+    <div class="icon">
+      <a href="#"><img src="assets/icons/1.png" alt="Ensino"><p>Ensino</p></a>
+    </div>
+    <!-- Outros ícones seguem o mesmo padrão -->
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <p>&copy; 2024 Semana de Física - UEFS</p>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

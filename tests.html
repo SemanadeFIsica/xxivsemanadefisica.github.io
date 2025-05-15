@@ -7,7 +7,8 @@
   <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="semanadefisica.css" />
-  <style>
+  <link rel="stylesheet" href="assets/css/banner-style.css">
+  <!-- <style>
     body{
       padding: 0;
       margin: 0;
@@ -149,7 +150,7 @@
       fill: white;
     }
     .ajuste-svg-c12 {
-      transform: scale(-1) translateY(1.2vw) translateX(0.1vw);
+      transform: scale(-1) translateY(1.375vw) translateX(0.1vw);
     }
 
     .cutout-canto {
@@ -334,11 +335,7 @@
     #detalhe-bio {
       color: #374151; /* text-gray-700 */
     }
-  </style>
-
-  <script>
-    
-  </script>
+  </style> -->
 </head>
 <body style="background-color: #f3f4f6; padding: 0;">
 
@@ -366,9 +363,9 @@
         </svg>
 
         <div class="coluna" id="logo-item">
-          <h1 class="item-direita desktop">XXIV Semana de Física</h1>
-          <h1 class="item-direita mobile">XXIV</h1>
-          <h1 class="item-direita mobile" id="h12">Semana de Física</h1>
+          <h1 class="item-direita desktop-banner">XXIV Semana de Física</h1>
+          <h1 class="item-direita mobile-banner">XXIV</h1>
+          <h1 class="item-direita mobile-banner" id="h12">Semana de Física</h1>
           <p>De Newton ao Networking: A Física e suas diferentes áreas de atuação</p>
         </div>
 
@@ -460,8 +457,11 @@
   </div>
 
   <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
+  <script src="assets/js/banner-js.js"></script>
+  <!-- <script>
     // Slider config
     const swiper = new Swiper(".mySwiper", {
       slidesPerView: 2.5,
@@ -521,6 +521,6 @@
 
     mediaQuery.addListener(aplicarClasse); // ou mediaQuery.addEventListener('change', aplicarClasse) em navegadores modernos
     aplicarClasse(mediaQuery); // Executa inicialmente
-  </script>
+  </script> -->
 </body>
 </html>

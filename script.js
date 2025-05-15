@@ -117,30 +117,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Slider config
-const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 2,
-    spaceBetween: 20,
-    loop: true,
-    freeMode: true,
-    freeModeMomentum: false,
-    // autoplay: {
-    //   delay: 0,
-    //   disableOnInteraction: false,
-    // },
-    speed: 3000,
-  });
-
-  // Função para exibir detalhes do palestrante
-  function mostrarDetalhes(el) {
-    const nome = el.dataset.nome;
-    const bio = el.dataset.bio;
-    const foto = el.dataset.foto;
-
-    document.getElementById('detalhe-nome').textContent = nome;
-    document.getElementById('detalhe-bio').textContent = bio;
-    document.getElementById('detalhe-foto').src = foto;
-
-    const detalhes = document.getElementById('detalhes');
-    detalhes.classList.remove('hidden');
-  }

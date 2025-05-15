@@ -427,14 +427,6 @@ main {
     background-position: center;
 }
 
-.x {
-    position: absolute;
-    top: 65%;      /* posição vertical relativa (ajuste conforme necessário) */
-    left: 50%;     /* centraliza na horizontal */
-    transform: translate(-50%, -50%); /* corrige o alinhamento do centro do botão */
-    z-index: 2;
-}
-
 .swiper-container .swiper-button-next,
 .swiper-container .swiper-button-prev {
     width: 30px !important; /* Tamanho base para mobile */
@@ -746,6 +738,7 @@ main {
     left: 0;
     z-index: 1;
     transition: 10.4s;
+    border: 1px red dashed;
 }
 
 .btn-white::after {
