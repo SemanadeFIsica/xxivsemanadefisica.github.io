@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Slider + Detalhes do Palestrante</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="semanadefisica.css" />
   <style>
@@ -22,7 +22,6 @@
     }
 
     .banner-fundo {
-      /* background: linear-gradient(135deg, rgb(114, 0, 250), rgba(39, 38, 42, 1)); */
       background: radial-gradient(circle at top left, #6833ad, #3b0086, #240052, #000000);
       width: 100%;
       margin: 0;
@@ -36,12 +35,8 @@
       justify-content: center;
       flex-direction: column;
     }
-    .coluna#logo-item {
-      line-height: 0;
-    }
-
     .coluna p#p1{
-      padding-top: 5vw;
+      margin-top: -0.1vw;
       font-size: 4vw;
     }
     .coluna p#p2{
@@ -49,8 +44,10 @@
       font-size: 4vw;
     }
     .coluna div#info {
-      padding-top: 9vw;
-      font-size: 1.2vw;
+      padding-top: 1.5vw;
+      font-size: 1.5vw;
+      line-height: 0.5vw;
+      margin-bottom: -1vw;
     }
     .coluna div#banner-patrocinadores {
       font-size: 1vw;
@@ -74,7 +71,7 @@
     {
       font-size: 6vw;
       position: relative;
-      top: 1.5vw;
+      top: -4.5vw;
     }
     .linha#logosmfs h1
     {
@@ -83,18 +80,18 @@
     }
     .linha#logosmfs p
     {
-      padding-top: 2.8vw;
+      margin-top: -5.6vw;
       position: inherit;
       font-size: 1.8vw;
-      border: 3px dashed red;
     }
     .linha#logosmfs svg#icon {
       size: 2vw;
-      border: 2px dashed white;
+    }
+    .linha#banner-patrocinadores {
+      margin-bottom: 3vw;
     }
     .linha#banner-patrocinadores svg, img {
       object-fit: contain;       /* garante ajuste de conteúdo sem distorção */
-      border: 2px dashed red;
       margin: 0 -0.5vw;
       display: block;
     }
@@ -114,7 +111,6 @@
     .item-esquerda#logo-item {
       width: 10vw;
       aspect-ratio: 1;
-      border: 1px dashed white;
     }
 
     .item-direita#logo-item {
@@ -127,12 +123,12 @@
       overflow: hidden;
       position: relative;
       width: 100%;
-      height: 8vw; /* Controla do corte */
+      height: 9vw; /* Controla do corte */
       pointer-events: none;
       display: flex;
       justify-content: center;
       margin-top: 0vw; /* Desloca a linha inteira */
-      border: 1px aqua dashed;
+      /* border: 1px aqua dashed; */
     }
 
     .cutout .linha {
@@ -185,14 +181,171 @@
     .canto-direito {
       transform: translateY(5vw) translateX(15vw) scale(4) rotate(40deg) !important;
     }
-  </style>
-</head>
-<body class="bg-gray-100 p-6">
 
-  <div style="border: 1px dashed yellow;" class="banner-fundo">
+    @media screen and (max-width: 576px)
+    {
+      .banner-fundo {
+        aspect-ratio: 108/135;
+      }
+
+      
+      .coluna#logosmfs svg {
+        width: 20vw;
+        margin-bottom: -9.8vw;
+        margin-top: -9.2vw;
+      }
+      .coluna#logosmfs p {
+        font-size: 2.4vw;
+        margin-top: -9.4vw;
+      }
+      .coluna#logosmfs h1 {
+        font-size: 10vw;
+      }
+      .coluna#logosmfs h1#h12 {
+        margin-top: -11vw;
+      }
+      .coluna p#p1 {
+        margin-top: 28vw;
+        font-size: 7.8vw;
+      }
+      .coluna div#info {
+        margin-top: 15vw;
+        font-size: 3vw;
+      }
+      .coluna div#banner-patrocinadores {
+        font-size: 2.5vw;
+      }
+
+      .linha#banner-patrocinadores svg#square, img#square {
+        height: 6vw;
+      }
+      .linha#banner-patrocinadores svg#rect, img#rect {
+        height: 4vw;
+      }
+
+      .cutout-canto{
+        width: 50vw;
+        height: 50vw;
+      }
+      .cutout-canto#inferior-direito {
+        top: 0;
+        bottom: auto;
+        transform: rotate(-90deg) translateX(2vw);
+      }
+      .canto-esquerdo {
+        transform: translateY(9vw) translateX(-20vw) scale(2.1) rotate(-90deg) !important;
+      }
+      .canto-direito {
+        transform: translateY(10vw) translateX(30vw) scale(2.5) rotate(30deg) !important;
+      }
+
+      .item-direita {
+        
+      }
+      
+      #detalhes .info {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+    }
+
+    /* Removando o Tailwind... */
+    .swiper-slide {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .swiper-slide img {
+      border-radius: 50%;
+      width: 6rem;
+      height: 6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .swiper-slide h3 {
+      font-size: 1.125rem;
+      font-weight: bold;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.25rem;
+    }
+
+    .text-gray-300 {
+      color: #d1d5db;
+    }
+
+    .container-palestrantes {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .container-palestrantes h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    #detalhes {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+      padding: 1.5rem;
+      display: none;
+      transition: all 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    #detalhes.show {
+      display: block;
+    }
+
+    #detalhes .info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    #detalhes img {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+    }
+
+    #detalhe-nome {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    #detalhe-bio {
+      color: #374151; /* text-gray-700 */
+    }
+  </style>
+
+  <script>
+    
+  </script>
+</head>
+<body style="background-color: #f3f4f6; padding: 0;">
+
+  <div style="" class="banner-fundo">
     <div class="coluna">
 
-      <div class="cutout">
+      <div class="cutout" id="curvas-1">
         <div class="linha">
           <svg>
             <use href="assets/vectors/sprite.svg#3"></use>
@@ -213,7 +366,9 @@
         </svg>
 
         <div class="coluna" id="logo-item">
-          <h1 class="item-direita">XXIV Semana de Física</h1>
+          <h1 class="item-direita desktop">XXIV Semana de Física</h1>
+          <h1 class="item-direita mobile">XXIV</h1>
+          <h1 class="item-direita mobile" id="h12">Semana de Física</h1>
           <p>De Newton ao Networking: A Física e suas diferentes áreas de atuação</p>
         </div>
 
@@ -247,7 +402,7 @@
       </div>
 
       <!-- SVG canto inferior direito -->
-      <div style="right: 0;" class="cutout-canto ">
+      <div style="right: 0;" class="cutout-canto" id="inferior-direito">
         <svg class="canto-direito">
           <use href="assets/vectors/sprite.svg#2"></use>
         </svg>
@@ -257,7 +412,7 @@
   </div>
 
 
-  <div class="max-w-6xl mx-auto">
+  <div class="container-palestrantes">
     <h2 class="text-3xl font-bold mb-6 text-center">Palestrantes em Destaque</h2>
 
     <!-- Slider -->
@@ -265,26 +420,26 @@
       <div class="swiper-wrapper">
 
         <!-- Slides com dados embutidos como atributos -->
-        <div class="swiper-slide bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center cursor-pointer"
+        <div class="swiper-slide"
              onclick="mostrarDetalhes(this)"
              data-nome="João Silva"
              data-bio="João é especialista em inovação tecnológica com 10 anos de experiência em startups."
              data-foto="https://via.placeholder.com/150">
           <img src="https://via.placeholder.com/150" alt="João" class="rounded-full w-24 h-24 mb-3">
           <h3 class="text-lg font-semibold">João Silva</h3>
-          <div class="flex justify-center mt-1">
+          <div class="stars">
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="text-gray-300">★</span>
           </div>
         </div>
 
-        <div class="swiper-slide bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center cursor-pointer"
+        <div class="swiper-slide"
              onclick="mostrarDetalhes(this)"
              data-nome="Maria Oliveira"
              data-bio="Maria é pesquisadora e palestrante na área de inteligência artificial e ética digital."
              data-foto="https://via.placeholder.com/150">
           <img src="https://via.placeholder.com/150" alt="Maria" class="rounded-full w-24 h-24 mb-3">
           <h3 class="text-lg font-semibold">Maria Oliveira</h3>
-          <div class="flex justify-center mt-1">
+          <div class="stars">
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="text-gray-300">★</span><span class="text-gray-300">★</span>
           </div>
         </div>
@@ -293,8 +448,8 @@
     </div>
 
     <!-- Seção de detalhes oculta inicialmente -->
-    <div id="detalhes" class="bg-white rounded-2xl shadow-lg p-6 hidden transition-all duration-300">
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+    <div id="detalhes">
+      <div class="info">
         <img id="detalhe-foto" src="" class="w-32 h-32 rounded-full border" alt="Foto do palestrante">
         <div>
           <h3 id="detalhe-nome" class="text-2xl font-bold mb-2"></h3>
@@ -333,7 +488,39 @@
 
       const detalhes = document.getElementById('detalhes');
       detalhes.classList.remove('hidden');
+      detalhes.classList.add('show');
     }
+    
+    // Banner responsividade
+    const elemento = document.getElementById('logosmfs');
+    const curvas = document.getElementById('curvas-1');
+    const mediaQuery = window.matchMedia('(min-width: 576px)');
+
+    function toggleMobile(ativo) {
+      document.querySelectorAll('.mobile').forEach(el => {
+        el.style.display = ativo ? '' : 'none';
+      });
+      document.querySelectorAll('.desktop').forEach(el => {
+        el.style.display = ativo ? 'none' : '';
+      });
+    }
+
+    function aplicarClasse(e) {
+      if (e.matches) {
+        elemento.classList.add('linha');
+        elemento.classList.remove('coluna');
+        curvas.style.display = 'flex';
+        toggleMobile(false);
+      } else {
+        elemento.classList.add('coluna');
+        elemento.classList.remove('linha');
+        curvas.style.display = 'none';
+        toggleMobile(true);
+      }
+    }
+
+    mediaQuery.addListener(aplicarClasse); // ou mediaQuery.addEventListener('change', aplicarClasse) em navegadores modernos
+    aplicarClasse(mediaQuery); // Executa inicialmente
   </script>
 </body>
 </html>
