@@ -357,7 +357,7 @@ main {
     flex-wrap: wrap; /* Allow wrapping on small screens */
     gap: 15px; /* Reduced gap for mobile */
     padding: 10px;
-    margin: 15px auto;
+    margin: 0px auto;
     max-width: 100%; /* Full width on mobile */
     position: relative;
     z-index: 1;
@@ -380,6 +380,7 @@ main {
 }
 
 .icon img {
+    align-items: center;
     width: 50px; /* Smaller for mobile */
     height: 50px;
     margin-bottom: 5px;
@@ -393,11 +394,21 @@ main {
 
 .icon p {
     font-size: 0.8em; /* Smaller text for mobile */
-    margin-top: 5px;
+    margin-top: 0px;
     color: #d9c5ff;
     font-weight: bold;
+    align-items: center;
 }
 
+
+.image-slider {
+    max-width: 80%; /* Ajuste a largura máxima conforme necessário */
+    margin: 20px auto; /* Centraliza o slider na página */
+    /* border: 2px solid #8a4fff;  Opcional: Adiciona uma borda para visualização */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: Sombra leve */
+    border-radius: 10px;
+    
+}
 .swiper-container {
     width: 100vw;
     max-width: 100%; /* Smaller for mobile */
@@ -583,7 +594,7 @@ main {
     
     /* Reduzir ligeiramente o gap para desktop para encaixar melhor */
     .icons {
-        gap: 10px;
+        gap: 25px;
     }
 
     .icon img {
@@ -776,3 +787,5 @@ main {
 }
 
 /* Fim Botão Increva-se */
+
+
