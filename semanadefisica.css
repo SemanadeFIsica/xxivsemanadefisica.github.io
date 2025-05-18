@@ -410,7 +410,7 @@ main {
     
 }
 .swiper-container {
-    width: 100vw;
+    width: 80vw;
     max-width: 100%; /* Smaller for mobile */
     height: auto;
     margin: 0;
@@ -420,7 +420,6 @@ main {
     position: relative;
     z-index: 1;
     margin-top: 0;
-    margin-bottom: 0;
     border: 0px solid rgba(138, 79, 255, 0.5);
     overflow: hidden;
 }
@@ -431,11 +430,12 @@ main {
     max-height: 100%;
     width: 100%; /* Ocupa 100% da largura do contêiner */
     height: auto !important;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 0px;
     margin-top: 0;
     background-size: cover;
     background-position: center;
+    margin: 0px 0px;
 }
 
 .swiper-container .swiper-button-next,
@@ -497,11 +497,23 @@ main {
     transform: scale(1.2);
 }
 
+
+
 /* Animation for page transitions */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+.novo-slide-imagens {
+    max-width: 80%; /* Ou o valor desejado para a largura máxima do container */
+    margin: 20px auto; /* 'auto' nas laterais centraliza o elemento */
+    /* border: 2px solid #8a4fff;  Opcional: Adiciona uma borda para visualização */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: Sombra leve */
+    border-radius: 10px;
+}
+
+
 
 .fade-in {
     animation: fadeIn 0.5s ease;
@@ -605,11 +617,11 @@ main {
     .icon p {
         font-size: 0.9em;
     }
-    /*
+    
     .swiper-container {
-        max-width: 350px; Full size on desktop
+        max-width: 550px; /* Full size on desktop */
     }
-    */
+    
     
     .swiper-button-next,
     .swiper-button-prev {
