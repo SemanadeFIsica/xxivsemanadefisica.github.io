@@ -405,7 +405,7 @@ main {
     max-width: 80%; /* Ajuste a largura máxima conforme necessário */
     margin: 20px auto; /* Centraliza o slider na página */
     /* border: 2px solid #8a4fff;  Opcional: Adiciona uma borda para visualização */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: Sombra leve */
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: Sombra leve */
     border-radius: 10px;
     
 }
