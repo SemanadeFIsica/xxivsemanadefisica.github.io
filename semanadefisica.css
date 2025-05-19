@@ -96,6 +96,31 @@ font-family: 'Garet', Helvetica, Arial, sans-serif !important;
 font-weight: normal !important;
 }
 
+.titulo-cronograma {
+    font-size: 2rem; /* Tamanho padrão */
+    margin-bottom: -92px;
+    text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+    .titulo-cronograma {
+        font-size: 1.5rem;
+        margin-bottom: -75px;
+        letter-spacing: normal; /* Garante que não haja espaçamento em celulares */
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .titulo-cronograma {
+        font-size: 3rem;
+        margin-bottom: -80px;
+        letter-spacing: 0.5rem; /* Espaçamento entre letras em desktops */
+    }
+}
+
+
+
+
 nav {
     background: linear-gradient(to right, rgba(58, 0, 134, 1), rgba(106, 60, 181, 1));
     /* background-color: #000000; */
@@ -799,5 +824,7 @@ main {
 }
 
 /* Fim Botão Increva-se */
+
+
 
 
