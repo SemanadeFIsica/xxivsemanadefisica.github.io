@@ -191,6 +191,10 @@ p.detalhe-atuacao {
   font-size: clamp(0.875rem, 1.5vw, 4rem);
 }
 
+p.desktop-item.detalhe-bio {
+  flex-direction: column;
+}
+
 @media screen and (max-width: 826px)
 {
   .swiper-pagination,
@@ -250,6 +254,11 @@ p.detalhe-atuacao {
   }
   .detalhes-titulos li {
     margin-bottom: 4px;
+  }
+
+  .detalhe-bio-mobile.mobile-item p {
+    font-size: clamp(0.5rem, 3.8vw, 3rem);
+    /* background-color: red; */
   }
 
   .palestrantes-slider h2.nome {
