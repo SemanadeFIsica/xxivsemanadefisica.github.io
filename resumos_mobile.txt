@@ -1,0 +1,132 @@
+### Dra. Círia Lima Dias (1190 caracteres)
+Especialista em evolução galáctica, a Dra. Círia investiga como ambientes densos
+como o aglomerado de Hydra influenciam a transformação de galáxias. Com
+doutorado no Chile, utiliza dados multiwavelength (óptico, infravermelho, rádio)
+para analisar processos como supressão de formação estelar e alterações
+morfológicas. Seu trabalho combina observações em telescópios internacionais com
+modelagem computacional avançada, revelando como interações gravitacionais e o
+meio intra-aglomerado atuam como "laboratórios cósmicos". Atualmente em
+pós-doutorado, colabora com grandes observatórios para entender a vida e morte
+das galáxias em escalas cósmicas.
+
+### Dr. João de Azevedo Cardeal (1205 caracteres)
+Como físico matemático da UEFS, o Dr. Cardeal decifra as simetrias fundamentais
+do universo através da teoria de grupos. Seu trabalho aplica álgebras de Lie
+para resolver equações diferenciais complexas, com contribuições desde a
+econofísica até a mecânica estatística. Desenvolveu métodos inovadores para
+classificar equações não-lineares como as de Fokker-Planck, encontrando soluções
+analíticas para problemas antes intratáveis. Coordenador do Mestrado em Ensino
+de Física, transformou o programa em referência nacional, integrando rigor
+matemático com pedagogia inovadora. Seus estudos sobre sistemas críticos revelam
+padrões universais em fenômenos tão diversos quanto transições de fase e crises
+financeiras.
+
+### Dr. Paulo Jackson Lago (1185 caracteres)
+Operando telescópios no Chile após passagem pelo LNA, o Dr. Lago é especialista
+em nebulosas planetárias - os "últimos suspiros" de estrelas como o Sol. Sua
+pesquisa combina espectroscopia de alta resolução com modelagem 3D para
+desvendar a cinemática e química desses objetos. Como técnico do Observatório
+Rubin, está na linha de frente da revolução dos surveys astronômicos que
+mapearão bilhões de objetos. Seu trabalho em operações telescópicas garante a
+qualidade dos dados para estudos cosmológicos. Publicou descobertas sobre a
+morfologia dinâmica de nebulosas, revelando como ventos estelares e radiação
+moldam essas estruturas complexas em escalas de tempo astronômicas.
+
+### Dr. Daniel Medeiros Reis (1195 caracteres)
+Bridging theory and nuclear applications, Dr. Reis explores quantum field theory
+at finite temperature, with implications for condensed matter and energy
+technologies. His work on metamaterials designs nanostructures with
+unprecedented optical properties, promising breakthroughs in medical imaging and
+photonics. In nuclear physics, he develops theoretical models to predict reactor
+behavior under extreme conditions, contributing to safer and more efficient
+nuclear plants. His interdisciplinary approach connects fundamental quantum
+phenomena to practical challenges, from Bose-Einstein condensation to radiation
+shielding. Currently investigating phase transitions in complex systems, his
+research informs both academic understanding and industrial applications in the
+energy sector.
+
+TRANSLATED
+Ligando teoria e aplicações nucleares, o Dr. Reis explora a teoria quântica de
+campos a temperatura finita, com implicações para a matéria condensada e
+tecnologias energéticas. Seu trabalho com metamateriais projeta nanoestruturas
+com propriedades ópticas sem precedentes, prometendo avanços em imagem médica e
+fotônica. Na física nuclear, desenvolve modelos teóricos para prever o
+comportamento de reatores sob condições extremas, contribuindo para usinas
+nucleares mais seguras e eficientes. Sua abordagem interdisciplinar conecta
+fenômenos quânticos fundamentais a desafios práticos, desde a condensação de
+Bose-Einstein até o bloqueio de radiação. Atualmente, investiga transições de
+fase em sistemas complexos, com uma pesquisa que informa tanto a compreensão
+acadêmica quanto aplicações industriais no setor energético.
+
+
+### Dra. Fanny Costa (1200 caracteres)
+Chefe do Bragg Centre X-ray Facility (Leeds), a Dra. Costa é referência em
+cristalografia farmacêutica. Especialista no método Rietveld e Pair Distribution
+Function, desenvolveu técnicas para caracterizar fármacos amorfos e polimorfos
+cristalinos. Seu trabalho possibilita medicamentos mais estáveis e
+biodisponíveis, acelerando o desenvolvimento de novas formulações. Pioneira na
+aplicação de machine learning à análise de difração, criou algoritmos que
+resolvem estruturas moleculares complexas em tempo recorde. Antes no Diamond
+Light Source (UK), estabeleceu protocolos para estudos in situ de cristalização,
+essenciais para a indústria farmacêutica. Seu laboratório serve tanto à academia
+quanto à indústria, traduzindo pesquisa fundamental em inovação terapêutica.
+
+### Me. Gleidson Pinto (1180 caracteres)
+Como supervisor de proteção radiológica na Bahia, o Me. Pinto otimiza a relação
+risco-benefício em exames de imagem. Desenvolveu algoritmos para cálculo preciso
+de dose em tecidos heterogêneos, adotados como referência no Nordeste. Seu
+mestrado em modelagem computacional aplicada à medicina nuclear resultou em
+protocolos inovadores para mamografia e tomografia. Atuando em múltiplas
+clínicas, implementa sistemas de garantia de qualidade que protegem pacientes e
+profissionais. Autor de manuais técnicos, forma novas gerações de físicos
+médicos com ênfase em ética e segurança. Seu trabalho diário traduz princípios
+físicos complexos em práticas que salvam vidas, equilibrando diagnóstico preciso
+com mínima exposição à radiação.
+
+### Dra. Regina Barroso (1205 caracteres)
+Pioneira no uso de luz síncrotron para diagnóstico médico, a Dra. Barroso (UERJ)
+desenvolveu técnicas não-invasivas para estudar ossos e tecidos. Seus mapas de
+distribuição de elementos traço em tecido ósseo revolucionaram o entendimento da
+osteoporose. Utilizando fluorescência de raios X com resolução micrométrica,
+revelou como metais pesados se acumulam em estruturas biológicas. No LNLS, criou
+métodos para análise de materiais biomédicos que combinam difração e
+espectroscopia. Professora titular com bolsa de produtividade do CNPq, formou
+gerações de pesquisadores na interface física-biomedicina. Seu laboratório é
+referência internacional em técnicas de imagem aplicadas à saúde, traduzindo
+física nuclear em avanços diagnósticos.
+
+### Dra. Suellen Novais (1190 caracteres)
+Na UFRB, a Dra. Novais sintetiza nanopartículas cintiladoras para aplicações
+médicas revolucionárias. Combinando métodos sol-gel e hidrotérmico assistido por
+microondas, cria materiais luminescentes para imageamento e terapia. Seus
+estudos sobre transferência de energia em nanoescala permitem sistemas
+"tudo-em-um" que diagnosticam e tratam simultaneamente. Paralelamente, coordena
+o projeto Física Interativa, popularizando ciência no Recôncavo Baiano através
+de experimentos lúdicos. Investigando propriedades óticas de compósitos,
+desenvolve cintiladores mais eficientes para radioterapia e PET-CT. Sua pesquisa
+une síntese química, caracterização avançada (EXAFS, termoluminescência) e
+aplicações clínicas, formando uma ponte entre laboratório e leito hospitalar.
+
+### Dra. Susane Medeiros (1200 caracteres)
+Na UEFS, a Dra. Medeiros aplica simulações quânticas (DFT) para projetar
+nanomateriais energéticos. Seus cálculos predizem propriedades eletrônicas em
+materiais 2D como grafeno para aplicações em células solares e supercapacitores.
+Com formação interdisciplinar (física computacional e energias renováveis),
+desenvolve soluções nanotecnológicas para desafios ambientais. Seu grupo
+sintetiza e caracteriza nanoestruturas para armazenamento de energia limpa,
+validando previsões teóricas. Professora visitante, integra engenheiros e
+físicos em projetos que vão desde sensores ambientais até revestimentos
+inteligentes. Investigando heteroestruturas van der Waals, busca materiais com
+propriedades sob medida para transição energética, unindo teoria e experimento.
+
+### Dra. Vera Martin (1185 caracteres)
+Especialista em galáxias aneladas e sistemas de referência astronômicos, a Dra.
+Martin (UEFS) conecta astronomia fundamental com astrofísica moderna. Seus
+trabalhos pioneiros ligando referenciais ópticos e de rádio são essenciais para
+navegação espacial. Estudos sobre galáxias peculiares no LNA revelaram
+mecanismos de formação de anéis estelares por interações de maré. Como
+coordenadora do Mestrado em Astronomia, criou modelo inovador que forma
+professores-astrônomos capazes de inspirar futuras gerações. Atualmente na
+PROGRAD/UEFS, implementa políticas para excelência no ensino de ciências. Sua
+carreira exemplifica como pesquisa de ponta e gestão acadêmica podem se
+complementar para transformar a educação científica no Brasil.

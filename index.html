@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XXIV Semana de Física</title>
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="semanadefisica.css">
     <link rel="stylesheet" href="assets/css/banner-style.css">
     <link rel="stylesheet" href="assets/css/event-schedule.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/palestrantes-slider.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
     <style>
       .star { color: gold; }
       .hidden {
@@ -22,8 +24,12 @@
   <!--               Inicio do menu                     -->
 
   <nav>
-      <button class="menu-toggle" id="menuToggle">
-          <i class="fas fa-bars"></i>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <svg width="24" height="24" viewBox="0 0 100 80" fill="currentColor">
+          <rect width="100" height="10"></rect>
+          <rect y="30" width="100" height="10"></rect>
+          <rect y="60" width="100" height="10"></rect>
+        </svg>
       </button>
       <ul class="menu-collapse" id="menuCollapse">
           <li><a href="#" aria-current="page">Início</a></li>
@@ -41,8 +47,6 @@
   </nav>
 
   <!--               Fim do menu                     -->
-
-  <!--               Inicio do slide                     -->
 
   <div style="" class="banner-fundo">
     <div class="coluna">
@@ -63,14 +67,14 @@
 
       <div class="linha" id="logosmfs">
 
-        <svg class="item-esquerda" id="logo-item">
+        <svg class="item-esquerda logo-item">
           <use href="assets/vectors/sprite.svg#vector-4"></use>
         </svg>
 
-        <div class="coluna" id="logo-item">
-          <h1 class="item-direita desktop-banner">XXIV Semana de Física</h1>
-          <h1 class="item-direita mobile-banner">XXIV</h1>
-          <h1 class="item-direita mobile-banner" id="h12">Semana de Física</h1>
+        <div class="coluna logo-item">
+          <h1 class="item-direita desktop-item">XXIV Semana de Física</h1>
+          <h1 class="item-direita mobile-item">XXIV</h1>
+          <h1 class="item-direita mobile-item" id="h12">Semana de Física</h1>
           <p>De Newton ao Networking: A Física e suas diferentes áreas de atuação</p>
         </div>
 
@@ -83,13 +87,13 @@
       <div id="banner-patrocinadores">
         <p>Realização:</p>
         <div class="linha" id="banner-patrocinadores">
-          <svg style="fill: white; color: white;" id="square">
+          <svg style="fill: white; color: white;" class="square">
             <use href="assets/vectors/sprite-uefs.svg#dafis"></use>
           </svg>
-          <img src="assets/icons/ostra.png" alt="" id="square">
-          <img src="assets/icons/uefs.gif" alt="" id="square">
+          <img src="assets/icons/ostra.png" alt="" class="square">
+          <img src="assets/icons/uefs.gif" alt="" class="square">
           <div class="coluna">
-            <svg id="rect">
+            <svg class="rect">
               <use href="assets/vectors/sprite-uefs.svg#proex"></use>
             </svg>
             <p id="proex">PRÓ-REITORIA DE EXTENSÃO | UEFS</p>
@@ -138,77 +142,859 @@
 
 
   <section class="cont-txt event-schedule">
+    
     <div>
-      <h1>Dia 1</h1>
-      <div id="schedule-cont">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+      <h1 class="dia mobile-dia">Segunda-feira</h1>
+      <h1 class="dia desktop-dia">Segunda-feira (26/05)</h1>
+      <div class="schedule-cont">
+        <h2>08:00 às 08:30</h2>
+        <p>Solenidade de abertura.</p>
+        <h2>08:30 às 09:30</h2>
+        <p>Palestra de abertura – Física e Biologia se encontram nas
+           técnicas de investigação usando radiação síncrotron: 
+           Oportunidades, avanços e desafios. Dra. Regina Cély Barroso - UERJ.
+        </p>
+        <h2>09:30 às 10:00</h2>
+        <p>Coffee Break.</p>
+        <h2>10:00 às 11:00</h2>
+        <p>Palestra - Nano partículas cintiladoras: a física de materiais
+        luminescentes aplicados em medicina visando desenvolver novas formas de
+        terapia. Dra. Suellen Maria Valeriano Novais - UFRB.</p>
+        <h2>11:00 às 12:00</h2>
+        <p>Palestra - A atuação da Física Médica na área de imagem. Me. Gleidson
+        de Oliveira Pinto.</p>
+        <h2>12:00 às 14:00</h2>
+        <p>Almoço.</p>
+        <h2>14:00 às 17:00</h2>
+        <p>Apresentação de experimentos: LABOFIS (Hall e Gato).</p>
+      </div>
+      <div class="palestrantes">
+        <h2>Destaques do Dia</h2>
+        <!-- INICIO -->
+        <section class="palestrantes-slider">
+          <div class="swiper mySwiper1">
+            <!-- INÍCIO SWIPER WRAPPER -->
+            <div class="swiper-wrapper">
+              <!-- Palestrante 1 -->
+              <div class="swiper-slide palestrante-card"
+              data-nome="Dra. Regina Cély Barroso" 
+              data-atuacao="Física Nuclear Aplicada à Biomedicina"
+              data-bio='Pioneira no uso de técnicas nucleares para diagnóstico
+              médico, a Dra. Regina Barroso construiu uma carreira que
+              transforma física fundamental em ferramentas para a saúde. Seu
+              trabalho no Laboratório Nacional de Luz Síncrotron (LNLS)
+              desenvolveu métodos não-destrutivos para análise de tecidos ósseos
+              que revolucionaram o estudo da osteoporose.;
+              Utilizando fluorescência de raios X com resolução micrométrica, sua equipe
+              mapeou a distribuição espacial de elementos traço em ossos humanos, revelando
+              padrões surpreendentes de acumulação de metais pesados e sua relação com doenças
+              degenerativas. Esses estudos têm implicações importantes tanto para diagnóstico
+              precoce quanto para o desenvolvimento de novos materiais biomédicos.;
+              Como professora titular da UERJ, a Dra. Barroso formou gerações de pesquisadores
+              na interface física-biomedicina, sempre com ênfase na aplicação social do
+              conhecimento científico. Seu laboratório é referência internacional em técnicas
+              de imagem por raios X aplicadas a sistemas biológicos.'
+              data-biomobile="Pioneira no uso de luz síncrotron para
+              diagnóstico médico, a Dra. Barroso (UERJ) desenvolveu técnicas
+              não-invasivas para estudar ossos e tecidos. Seus mapas de
+              distribuição de elementos traço em tecido ósseo revolucionaram o
+              entendimento da osteoporose. Utilizando fluorescência de raios X
+              com resolução micrométrica, revelou como metais pesados se
+              acumulam em estruturas biológicas. No LNLS, criou métodos para
+              análise de materiais biomédicos que combinam difração e
+              espectroscopia. Professora titular com bolsa de produtividade do
+              CNPq, formou gerações de pesquisadores na interface
+              física-biomedicina. Seu laboratório é referência internacional em
+              técnicas de imagem aplicadas à saúde, traduzindo física nuclear em
+              avanços diagnósticos."
+              data-titulos="Bacharel em Física (UFRJ);
+              Mestrado em Engenharia Nuclear (UFRJ);
+              Doutorado em Engenharia Nuclear (UFRJ);
+              Pós Doutorado em Física Médica;
+              Especialista em Técnicas de imagem por luz síncrotron;
+              Especialista em Aplicações biomédicas da física nuclear"
+              data-foto="assets/images/pessoas/Dra. Regina Cély Barroso.jpg"
+              >
+                <div class="linha">
+                  <img src="assets/images/pessoas/Dra. Regina Cély Barroso.jpg" alt="Regina Cély Barroso" />
+                    <div>
+                      <h2 class="nome">Dra. Regina Cély Barroso</h2>
+                      <p>Física Nuclear - UFRJ</p>
+                    </div>
+                </div>
+              </div>
+
+              <!-- Palestrante 2 -->
+              <div class="swiper-slide palestrante-card"
+              data-nome="Dra. Suellen Maria Valeriano Novais" 
+              data-atuacao="Física de Materiais Luminescentes."
+              data-bio='Na fronteira entre nanotecnologia e medicina, a Dra. Suellen Novais desenvolve
+              uma nova geração de materiais cintiladores que prometem revolucionar tanto o
+              diagnóstico quanto o tratamento do câncer. Seu trabalho combina síntese química
+              inovadora (incluindo o método hidrotérmico assistido por microondas) com
+              caracterização física avançada para criar nanopartículas com propriedades
+              luminescentes sob medida.;
+
+              Esses materiais, quando funcionalizados com biomoléculas específicas, podem não
+              apenas melhorar a qualidade da imagem em exames como PET-CT, mas também atuar
+              como agentes terapêuticos na terapia fotodinâmica. Seus estudos sobre mecanismos
+              de transferência de energia em escala nanométrica estão abrindo caminho para
+              sistemas "tudo-em-um" que combinam diagnóstico e tratamento.;
+
+              Paralelamente à pesquisa, a Dra. Novais mantém um vigoroso programa de
+              divulgação científica através do projeto Física Interativa, que já atingiu
+              milhares de estudantes no Recôncavo Baiano, mostrando como conceitos físicos
+              abstratos se traduzem em tecnologias que salvam vidas.'
+              data-biomobile='Na UFRB, a Dra. Novais sintetiza nanopartículas
+              cintiladoras para aplicações médicas revolucionárias. Combinando
+              métodos sol-gel e hidrotérmico assistido por microondas, cria
+              materiais luminescentes para imageamento e terapia. Seus estudos
+              sobre transferência de energia em nanoescala permitem sistemas
+              "tudo-em-um" que diagnosticam e tratam simultaneamente.
+              Paralelamente, coordena o projeto Física Interativa, popularizando
+              ciência no Recôncavo Baiano através de experimentos lúdicos.
+              Investigando propriedades óticas de compósitos, desenvolve
+              cintiladores mais eficientes para radioterapia e PET-CT. Sua
+              pesquisa une síntese química, caracterização avançada (EXAFS,
+              termoluminescência) e aplicações clínicas, formando uma ponte
+              entre laboratório e leito hospitalar.'
+              data-titulos="Doutora em Física (UFS);
+              Mestre em Física (UFS);
+              Graduada em Física Médica (UFS);
+              Especialista em nanomateriais cintiladores;
+              Especialista em técnicas de luminescência (TL, XRL);
+              Especialista em síntese de materiais por métodos sol-gel"
+              data-foto="assets/images/pessoas/Dra. Suellen Maria Valeriano Novais.jpg"
+              >
+                <div class="linha">
+                  <img src="assets/images/pessoas/Dra. Suellen Maria Valeriano Novais.jpg" alt="Regina Cély Barroso" />
+                    <div>
+                      <h2 class="nome">Dra. Suellen Maria V. N.</h2>
+                      <p>Física de Materiais</p>
+                    </div>
+                </div>
+              </div>
+
+              <!-- Palestrante 3 -->
+              <div class="swiper-slide palestrante-card"
+              data-nome="Me. Gleidson de Oliveira Pinto" 
+              data-atuacao="Física Médica"
+              data-bio='Na linha tênue entre diagnóstico eficaz e segurança do paciente, o trabalho do
+              Me. Gleidson Pinto estabelece novos padrões para a prática da física médica na
+              Bahia. Como supervisor de proteção radiológica em múltiplas instituições de
+              saúde, ele implementa protocolos que otimizam a relação risco-benefício em
+              exames de imagem.;
+
+              Seu mestrado em modelagem computacional aplicada à medicina nuclear resultou em
+              algoritmos inovadores para cálculo de doses em tecidos heterogêneos,
+              considerando fatores como composição corporal e geometria do feixe. Esses
+              modelos estão sendo adotados como referência em clínicas de todo o Nordeste.;
+
+              Além de seu trabalho técnico, o Me. Pinto é um educador dedicado, treinando
+              novos físicos médicos nos princípios éticos e científicos que devem guiar sua
+              prática. Seu manual sobre controle de qualidade em mamografia digital tornou-se
+              leitura obrigatória na especialização.
+              '
+              data-biomobile="Como supervisor de proteção radiológica na Bahia, o Me. Pinto otimiza a relação
+              risco-benefício em exames de imagem. Desenvolveu algoritmos para cálculo preciso
+              de dose em tecidos heterogêneos, adotados como referência no Nordeste. Seu
+              mestrado em modelagem computacional aplicada à medicina nuclear resultou em
+              protocolos inovadores para mamografia e tomografia. Atuando em múltiplas
+              clínicas, implementa sistemas de garantia de qualidade que protegem pacientes e
+              profissionais. Autor de manuais técnicos, forma novas gerações de físicos
+              médicos com ênfase em ética e segurança. Seu trabalho diário traduz princípios
+              físicos complexos em práticas que salvam vidas, equilibrando diagnóstico preciso
+              com mínima exposição à radiação."
+              data-titulos=" Mestre em Modelagem Computacional (SENAI-BA);
+              Licenciado em Física (UEFS);
+              Supervisor de Proteção Radiológica (Medicina Nuclear);
+              Físico médico em múltiplas instituições de saúde;
+              Especialista em garantia de qualidade em imagens diagnósticas;
+              Especialista em protocolos de segurança radiológica"
+              data-foto="assets/images/pessoas/Me. Gleidson de Oliveira Pinto.jpg"
+              >
+                <div class="linha">
+                  <img src="assets/images/pessoas/Me. Gleidson de Oliveira Pinto.jpg" alt="Regina Cély Barroso" />
+                    <div>
+                      <h2 class="nome">Me. Gleidson de O. Pinto</h2>
+                      <p>Física Médica</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!-- FIM SWIPER WRAPPER -->
+            
+
+            <div class="swiper-pagination pag-1"></div>
+            <div class="swiper-button-prev prev-1"></div>
+            <div class="swiper-button-next next-1"></div>
+          </div>
+
+          <!-- DETALHES -->
+          <div class="detalhes">
+            <div class="detalhes-content">
+                <div class="content-child titulos coluna">
+                  <img class="detalhe-foto" src="" alt="Foto do palestrante">
+                  <div class="detalhes-titulos wrap-text coluna"></div>
+                </div>
+                <div class="content-child">
+                  <h3 class="detalhe-nome"></h3>
+                  <p class="detalhe-atuacao"></p>
+                  <p class="detalhe-bio desktop-item"></p>
+                  <p class="detalhe-bio-mobile mobile-item"></p>
+                </div>
+              <button class="fechar">Fechar</button>
+            </div>
+          </div>
+        </section>
+        <!-- FIM -->
       </div>
     </div>
+    
+    <div>
+      <h1 class="dia mobile-dia">Terça-feira</h1>
+      <h1 class="dia desktop-dia">Terça-feira (26/05)</h1>
+      <div class="schedule-cont">
+        <h2>08:00 às 08:50</h2>
+        <p>Palestra - Nanotecnologia: soluções inteligentes para as engenharias.
+        Dra. Susane Eterna Leite Medeiros- DTEC/UEFS.</p>
+        <h2>08:50 às 09:30</h2>
+        <p>Palestra - Formação Continuada de Professores de Física: Mestrado
+        profissional em Ensino de Física. Dr. João de Azevedo Cardeal -
+        UEFS.</p>
+        <h2>09:30 às 10:10</h2>
+        <p>Palestra - Formação Continuada de Professores de Física: Mestrado
+        profissional Astronomia. Dra. Vera Aparecida Fernandes Martin -
+        UEFS.</p>
+        <h2>10:10 às 10:40</h2>
+        <p>Coffee Break.</p>
+        <h2>10:40 às 12:00</h2>
+        <p>Mesa-redonda - Desafios no Ensino de Física no Ensino Médio.
+        Coordenadora: Dra. Laura Sued Santos Debatedores: Alan Almeida
+        Mascarenhas, Bruna Melo Souza Santos e Dr. Yuri Hamayano Lopes
+        Ribeiro.</p>
+        <h2>12:00 às 14:00</h2>
+        <p>Almoço.</p>
+        <h2>14:00 às 14:40</h2>
+        <p>Palestra remota - O Papel da Física nas usinas nucleares: Princípios
+        e tecnologias. Dr. Daniel Medeiros Reis.</p>
+        <h2>14:40 às 15:20</h2>
+        <p>Palestra remota - Operações técnicas nos Observatórios astronômicos.
+        Dr. Paulo Jakson Assunção Lago - Observatório Rubin</p>
+        <h2>15:20 às 16:00</h2>
+        <p>Palestra remota – Transitando entre a pesquisa e a prestação de
+        serviço: minha jornada na cristalografia. Dra. Fanny Costa -
+        Universidade De Leeds.</p>
+        <h2>16:00 às 16:40</h2>
+        <p>Palestra remota - O Papel do Físico no Desenvolvimento da Tecnologia
+        Nuclear e na Radioproteção e Segurança Nuclear. Dr. Paulo Renato Barbosa
+        Marinho - CNEN.</p>
+        <h2>16:40 às 17:20</h2>
+        <p>Palestra remota – Evolução de Galáxias em Ambientes Densos e a
+          Experiência de um Pós-Doutorado Internacional. Dra. Ciria Lima Dias -
+          Universidade de La Serena.</p>
+      </div>
+        <div class="palestrantes">
+          <h2>Destaques do Dia</h2>
+          <!-- INICIO -->
+          <section class="palestrantes-slider">
+            <div class="swiper mySwiper2">
+              <!-- INÍCIO SWIPER WRAPPER -->
+              <div class="swiper-wrapper">
+                <!-- Palestrante 1 -->
+                <div class="swiper-slide palestrante-card"
+                data-nome="Dra. Susane Eterna Leite Medeiros" 
+                data-atuacao="Nanotecnologia e Energias Renováveis"
+                data-bio='Com uma formação que abrange desde física computacional até energias renováveis,
+                a Dra. Susane Medeiros personifica a abordagem multidisciplinar necessária para
+                enfrentar os desafios energéticos do século XXI. Seu trabalho em simulações de
+                primeiros princípios (DFT) de nanoestruturas para aplicações em células solares
+                estabeleceu novos parâmetros para o design racional de materiais fotovoltaicos.;
+
+                Recentemente, ela vem explorando materiais bidimensionais como o grafeno e seus
+                análogos para desenvolvimento de supercapacitores de alta eficiência. Seus
+                cálculos teóricos predizem propriedades eletrônicas excepcionais em
+                heteroestruturas van der Waals, que estão sendo verificadas experimentalmente
+                por colaboradores internacionais.;
+
+                Como professora visitante na UEFS, a Dra. Medeiros integra engenheiros e físicos
+                em projetos que vão desde o desenvolvimento de sensores ambientais até a criação
+                de revestimentos inteligentes para eficiência energética em edificações. Seu
+                grupo é reconhecido pela capacidade de traduzir descobertas fundamentais em
+                protótipos funcionais.'
+                data-biomobile="Na UEFS, a Dra. Medeiros aplica simulações quânticas (DFT) para projetar
+                nanomateriais energéticos. Seus cálculos predizem propriedades eletrônicas em
+                materiais 2D como grafeno para aplicações em células solares e supercapacitores.
+                Com formação interdisciplinar (física computacional e energias renováveis),
+                desenvolve soluções nanotecnológicas para desafios ambientais. Seu grupo
+                sintetiza e caracteriza nanoestruturas para armazenamento de energia limpa,
+                validando previsões teóricas. Professora visitante, integra engenheiros e
+                físicos em projetos que vão desde sensores ambientais até revestimentos
+                inteligentes. Investigando heteroestruturas van der Waals, busca materiais com
+                propriedades sob medida para transição energética, unindo teoria e experimento.
+                "
+                data-titulos="Doutora em Física (UFPB);
+
+                Mestre em Energias Renováveis (UFPB);
+
+                Bacharel em Física Computacional (UnB);
+                Especialista em simulações computacionais (DFT);
+
+                Especialista em nanomateriais para energia
+                "
+                data-foto="assets/images/pessoas/Dra. Susane Eterna Medeiros.jpg"
+                >
+                  <div class="linha">
+                    <img src="assets/images/pessoas/Dra. Susane Eterna Medeiros.jpg" alt="Regina Cély Barroso" />
+                      <div>
+                        <h2 class="nome">Dra. Susane E. L. Medeiros</h2>
+                        <p>Nanotecnologia</p>
+                      </div>
+                  </div>
+                </div>
+
+                <!-- Palestrante 2 -->
+                <div class="swiper-slide palestrante-card"
+                data-nome="Dr. João de Azevedo Cardeal" 
+                data-atuacao="Física Matemática"
+                data-bio='Na intersecção entre matemática pura e física teórica, o trabalho do Dr. João de
+                Azevedo Cardeal revela a profunda beleza das simetrias fundamentais que governam
+                nosso universo. Como professor da UEFS e especialista em teoria de grupos, ele
+                decifra a álgebra subjacente às equações diferenciais que descrevem fenômenos
+                tão diversos quanto a difusão de partículas e a dinâmica de mercados
+                financeiros.;
+
+                Sua abordagem inovadora aplica grupos de Lie à classificação de equações
+                diferenciais parciais, desenvolvendo métodos sistemáticos para encontrar
+                soluções analíticas para problemas não-lineares complexos. Nos últimos anos, seu
+                trabalho em econofísica tem estabelecido pontes surpreendentes entre sistemas
+                físicos e econômicos, mostrando como conceitos como entropia e criticalidade
+                podem iluminar o comportamento de mercados em crise.;
+
+                Como educador, o Dr. Cardeal transformou o Mestrado Profissional em Ensino de
+                Física da UEFS em um modelo nacional, integrando rigor matemático com pedagogia
+                inovadora. Seus alunos aprendem a enxergar a física não como uma coleção de
+                fórmulas, mas como uma linguagem universal de padrões e relações.
+                '
+                data-biomobile='Como físico matemático da UEFS, o Dr. Cardeal decifra as simetrias fundamentais
+                do universo através da teoria de grupos. Seu trabalho aplica álgebras de Lie
+                para resolver equações diferenciais complexas, com contribuições desde a
+                econofísica até a mecânica estatística. Desenvolveu métodos inovadores para
+                classificar equações não-lineares como as de Fokker-Planck, encontrando soluções
+                analíticas para problemas antes intratáveis. Coordenador do Mestrado em Ensino
+                de Física, transformou o programa em referência nacional, integrando rigor
+                matemático com pedagogia inovadora. Seus estudos sobre sistemas críticos revelam
+                padrões universais em fenômenos tão diversos quanto transições de fase e crises
+                financeiras.'
+                data-titulos="Doutor em Física (UnB);
+                Mestre em Física (UFBA);
+                Licenciado em Física (UFBA);
+                Professor Adjunto da UEFS;
+                Especialista em teoria de grupos e equações diferenciais"
+                data-foto="assets/images/pessoas/Dr. João de Azevedo Cardeal.jpg"
+                >
+                  <div class="linha">
+                    <img src="assets/images/pessoas/Dr. João de Azevedo Cardeal.jpg" alt="Regina Cély Barroso" />
+                      <div>
+                        <h2 class="nome">Dr. João de A. Cardeal</h2>
+                        <p>Física Matemática</p>
+                      </div>
+                  </div>
+                </div>
+
+                <!-- Palestrante 3 -->
+                <div class="swiper-slide palestrante-card"
+                data-nome="Dra. Vera Aparecida Fernandes Martin" 
+                data-atuacao="Astronomia Fundamental e Astrofísica Extragaláctica."
+                data-bio='A carreira da Dra. Vera Martin abrange desde os fundamentos da astrometria até
+                as complexidades da gestão acadêmica, sempre com um compromisso inabalável com a
+                excelência científica. Seus trabalhos pioneiros na conexão entre sistemas de
+                referência ópticos e de rádio foram essenciais para a criação de quadros de
+                referência celestes precisos, fundamentais para navegação espacial e astronomia
+                fundamental.;
+
+                Sua transição para o estudo de galáxias aneladas peculiares no LNA resultou em
+                descobertas importantes sobre os mecanismos de formação dessas estruturas raras,
+                que desafiam nossos modelos convencionais de evolução galáctica. Utilizando
+                espectroscopia de alta resolução, ela demonstrou como interações de maré podem
+                criar anéis de formação estelar em escalas de tempo cosmologicamente curtas.;
+
+                Como coordenadora do Mestrado Profissional em Astronomia da UEFS, a Dra. Martin
+                desenvolveu um modelo inovador que combina pesquisa de ponta com formação
+                pedagógica, preparando professores-astrônomos que estão revolucionando o ensino
+                de ciências em todo o Brasil.'
+                data-biomobile="Especialista em galáxias aneladas e sistemas de referência astronômicos, a Dra.
+                Martin (UEFS) conecta astronomia fundamental com astrofísica moderna. Seus
+                trabalhos pioneiros ligando referenciais ópticos e de rádio são essenciais para
+                navegação espacial. Estudos sobre galáxias peculiares no LNA revelaram
+                mecanismos de formação de anéis estelares por interações de maré. Como
+                coordenadora do Mestrado em Astronomia, criou modelo inovador que forma
+                professores-astrônomos capazes de inspirar futuras gerações. Atualmente na
+                PROGRAD/UEFS, implementa políticas para excelência no ensino de ciências. Sua
+                carreira exemplifica como pesquisa de ponta e gestão acadêmica podem se
+                complementar para transformar a educação científica no Brasil."
+                data-titulos="Professora Titular da UEFS;
+                Doutora e Mestre em Astronomia (USP);
+                Pós-doutora em Astrofísica (LNA);
+                Atual coordenadora da PROGRAD/UEFS;
+                Especialista em astronomia fundamental;
+                Especialista em galáxias aneladas peculiares"
+                data-foto="assets/images/pessoas/Dra. Vera Aparecida Fernandes Martin.jpg"
+                >
+                  <div class="linha">
+                    <img src="assets/images/pessoas/Dra. Vera Aparecida Fernandes Martin.jpg" alt="Regina Cély Barroso" />
+                      <div>
+                        <h2 class="nome">Dra. Vera A. F. Martin</h2>
+                        <p>Astronomia Fundamental</p>
+                      </div>
+                  </div>
+                </div>
+
+                <!-- Palestrante 4 -->
+                <div class="swiper-slide palestrante-card"
+                data-nome="Dr. Daniel Medeiros Reis" 
+                data-atuacao="Física Nuclear e Teoria Quântica de Campos"
+                data-bio='Na fronteira entre física fundamental e aplicações tecnológicas, o Dr. Daniel
+                Reis constrói pontes teóricas que conectam o mundo quântico aos desafios
+                energéticos do século XXI. Seu trabalho no CBPF avançou nossa compreensão de
+                sistemas quânticos em temperatura finita, revelando como efeitos coletivos
+                emergem das interações microscópicas.;
+
+                Sua pesquisa atual explora aplicações surpreendentes da Teoria Quântica de
+                Campos em problemas de matéria condensada, particularmente no desenvolvimento de
+                metamateriais com propriedades ópticas inéditas. Esses materiais artificiais,
+                estruturados em nanoescala, prometem revolucionar tecnologias que vão desde
+                imagens médicas até camuflagem avançada.;
+
+                Na área nuclear, o Dr. Reis investiga processos fundamentais em reatores,
+                contribuindo para o desenvolvimento de sistemas mais seguros e eficientes. Sua
+                abordagem teórica ajuda a prever comportamentos complexos em condições extremas,
+                informando decisões críticas sobre operação e segurança de usinas.
+                '
+                data-biomobile="Ligando teoria e aplicações nucleares, o Dr. Reis explora a teoria quântica de
+                campos a temperatura finita, com implicações para a matéria condensada e
+                tecnologias energéticas. Seu trabalho com metamateriais projeta nanoestruturas
+                com propriedades ópticas sem precedentes, prometendo avanços em imagem médica e
+                fotônica. Na física nuclear, desenvolve modelos teóricos para prever o
+                comportamento de reatores sob condições extremas, contribuindo para usinas
+                nucleares mais seguras e eficientes. Sua abordagem interdisciplinar conecta
+                fenômenos quânticos fundamentais a desafios práticos, desde a condensação de
+                Bose-Einstein até o bloqueio de radiação. Atualmente, investiga transições de
+                fase em sistemas complexos, com uma pesquisa que informa tanto a compreensão
+                acadêmica quanto aplicações industriais no setor energético."
+                data-titulos="Doutor em Física (CBPF);
+                Mestre em Física (UERJ);
+                Bacharel em Física (UEFS);
+                Especialista em Teoria Quântica de Campos;
+                Pesquisador em aplicações nucleares e matéria condensada"
+                data-foto="assets/images/pessoas/Dr. Daniel Medeiros Reis.jpg"
+                >
+                  <div class="linha">
+                    <img src="assets/images/pessoas/Dr. Daniel Medeiros Reis.jpg" alt="Regina Cély Barroso" />
+                      <div>
+                        <h2 class="nome">Dr. Daniel Medeiros Reis</h2>
+                        <p>Física Nuclear</p>
+                      </div>
+                  </div>
+                </div>
+
+              <!-- Palestrante 5 -->
+                <div class="swiper-slide palestrante-card"
+                data-nome="Dr. Paulo Jakson Assunção Lago" 
+                data-atuacao="Astronomia Observacional e Meio Interestelar"
+                data-bio='O Dr. Paulo Lago personifica a rara combinação de pesquisador teórico e operador
+                de telescópios de ponta. Com experiência que vai do Laboratório Nacional de
+                Astrofísica (LNA) no Brasil ao Las Campanas Observatory no Chile, ele tem uma
+                visão única sobre como avanços tecnológicos estão revolucionando nossa
+                capacidade de explorar o universo.;
+
+                Sua pesquisa sobre nebulosas planetárias - os espetaculares "últimos suspiros"
+                de estrelas como nosso Sol - combina observações de alta resolução espacial com
+                modelagem 3D sofisticada. Ao analisar a cinemática e morfologia desses objetos,
+                ele desvenda informações cruciais sobre processos nucleares estelares e a
+                enriquecimento químico do meio interestelar.;
+
+                Como operador técnico do futuro Observatório Rubin, o Dr. Lago está na linha de
+                frente de uma revolução na astronomia: a era dos surveys panorâmicos que
+                mapearão bilhões de objetos. Seu trabalho garante que os dados brutos coletados
+                por esses gigantescos instrumentos sejam transformados em informações
+                científicas precisas e confiáveis.'
+                data-biomobile='Operando telescópios no Chile após passagem pelo LNA, o Dr. Lago é especialista
+                em nebulosas planetárias - os "últimos suspiros" de estrelas como o Sol. Sua
+                pesquisa combina espectroscopia de alta resolução com modelagem 3D para
+                desvendar a cinemática e química desses objetos. Como técnico do Observatório
+                Rubin, está na linha de frente da revolução dos surveys astronômicos que
+                mapearão bilhões de objetos. Seu trabalho em operações telescópicas garante a
+                qualidade dos dados para estudos cosmológicos. Publicou descobertas sobre a
+                morfologia dinâmica de nebulosas, revelando como ventos estelares e radiação
+                moldam essas estruturas complexas em escalas de tempo astronômicas.
+                '
+                data-titulos="Doutor em Astronomia (USP);
+                Mestre em Astronomia (USP);
+                Bacharel em Física (UEFS);
+                Operador técnico do Observatório Rubin (Chile);
+                Especialista em nebulosas planetárias e meio interestelar;
+                Colaborador dos observatórios Gemini e SOAR"
+                data-foto="assets/images/pessoas/Dr.PauloJacksonAssunçãoLago.jpg"
+                >
+                  <div class="linha">
+                    <img src="assets/images/pessoas/Dr.PauloJacksonAssunçãoLago.jpg" alt="Regina Cély Barroso" />
+                      <div>
+                        <h2 class="nome">Dr. Paulo Jakson A. Lago</h2>
+                        <p>Astronomia Observacional</p>
+                      </div>
+                  </div>
+                </div>
+
+                <!-- Palestrante 6 -->
+                <div class="swiper-slide palestrante-card"
+                data-nome="Dra. Fanny Costa" 
+                data-atuacao="Cristalografia e difração de raios X"
+                data-bio='No coração da revolução farmacêutica moderna, a Dra. Fanny Costa lidera avanços
+                cruciais na caracterização de materiais cristalinos. Como chefe das instalações
+                de raios X no prestigiado Bragg Centre da Universidade de Leeds, ela opera na
+                interseção entre pesquisa acadêmica e desenvolvimento industrial.;
+
+                Seu trabalho com a técnica de Pair Distribution Function (PDF) está
+                transformando nossa capacidade de analisar materiais farmacêuticos amorfo,
+                tradicionalmente difíceis de caracterizar. Ao desenvolver métodos quantitativos
+                para estudar a ordem local em sistemas desordenados, ela está abrindo novas
+                possibilidades para formulações medicamentosas mais estáveis e biodisponíveis.;
+
+                A Dra. Costa também é pioneira no uso de inteligência artificial para análise de
+                dados de difração, acelerando dramaticamente o processo de solução de estruturas
+                cristalinas. Seus algoritmos estão ajudando a desvendar estruturas moleculares
+                complexas que desafiavam os métodos tradicionais de Rietveld.;
+                '
+                data-biomobile="Chefe do Bragg Centre X-ray Facility (Leeds), a Dra. Costa é referência em
+                cristalografia farmacêutica. Especialista no método Rietveld e Pair Distribution
+                Function, desenvolveu técnicas para caracterizar fármacos amorfos e polimorfos
+                cristalinos. Seu trabalho possibilita medicamentos mais estáveis e
+                biodisponíveis, acelerando o desenvolvimento de novas formulações. Pioneira na
+                aplicação de machine learning à análise de difração, criou algoritmos que
+                resolvem estruturas moleculares complexas em tempo recorde. Antes no Diamond
+                Light Source (UK), estabeleceu protocolos para estudos in situ de cristalização,
+                essenciais para a indústria farmacêutica. Seu laboratório serve tanto à academia
+                quanto à indústria, traduzindo pesquisa fundamental em inovação terapêutica.
+                "
+                data-titulos="Chefe do X-ray Analytical Facilities (Bragg Centre, Leeds);
+                Doutora em Cristalografia;
+                Ex-pesquisadora do Diamond Light Source (UK);
+                Especialista em análise de fármacos por difração de raios X;
+                Especialista em método Rietveld e Pair Distribution Function;
+                Especialista em Polimorfismo cristalino"
+                data-foto="assets/images/pessoas/Dra. Fanny Costa.jpg"
+                >
+                  <div class="linha">
+                    <img src="assets/images/pessoas/Dra. Fanny Costa.jpg" alt="Regina Cély Barroso" />
+                      <div>
+                        <h2 class="nome">Dra. Fanny Costa</h2>
+                        <p>Cristalografia</p>
+                      </div>
+                  </div>
+                </div>
+
+                <!-- Palestrante 7 -->
+                <div class="swiper-slide palestrante-card"
+                data-nome="Dra. Círia Lima Dias" 
+                data-atuacao="Astrofísica e evolução de galáxias."
+                data-bio='A astronomia moderna vive uma era dourada de descobertas sobre a formação e
+                evolução de galáxias, e a Dra. Círia Lima Dias está na vanguarda dessas
+                investigações. Com formação que atravessa continentes - desde a Universidade
+                Estadual de Feira de Santana até o doutorado no Chile - sua pesquisa desvenda
+                como ambientes extremamente densos, como o aglomerado de Hydra, atuam como
+                verdadeiros laboratórios cósmicos para entender processos fundamentais de
+                transformação galáctica.
+
+                Utilizando uma abordagem multiwavelength que combina dados ópticos,
+                infravermelhos e de rádio, a Dra. Círia investiga como fatores ambientais - como
+                pressão dinâmica, interações gravitacionais e meios intra-aglomerados -
+                influenciam propriedades fundamentais das galáxias: desde sua morfologia até a
+                formação estelar. Seus trabalhos recentes revelam padrões intrigantes de
+                supressão de formação estelar em galáxias satélites, sugerindo mecanismos
+                complexos de "morte galáctica" em ambientes densos.
+
+                Como pós-doutoranda na Universidad de La Serena, ela tem acesso privilegiado a
+                telescópios de classe mundial no Chile, combinando observações profundas com
+                modelagem computacional avançada. Sua pesquisa não apenas avança nosso
+                entendimento teórico, mas também ajuda a calibrar parâmetros cruciais para
+                simulações cosmológicas de última geração.
+                '
+                data-biomobile='Especialista em evolução galáctica, a Dra. Círia investiga como ambientes densos
+                como o aglomerado de Hydra influenciam a transformação de galáxias. Com
+                doutorado no Chile, utiliza dados multiwavelength (óptico, infravermelho, rádio)
+                para analisar processos como supressão de formação estelar e alterações
+                morfológicas. Seu trabalho combina observações em telescópios internacionais com
+                modelagem computacional avançada, revelando como interações gravitacionais e o
+                meio intra-aglomerado atuam como "laboratórios cósmicos". Atualmente em
+                pós-doutorado, colabora com grandes observatórios para entender a vida e morte
+                das galáxias em escalas cósmicas.'
+                data-titulos="Doutora em Astronomia (Universidad de La Serena);
+                Mestre em Astrofísica e Física Computacional (Cruzeiro do Sul);
+                Bacharel em Física (UEFS);
+                Pesquisadora em evolução de galáxias em ambientes densos;
+                Especialista em dados multiwavelength (óptico, infravermelho, rádio);
+                Investigadora do aglomerado de Hydra como laboratório cósmico"
+                data-foto="assets/images/pessoas/Dra. Ciria Lima Dias.jpg"
+                >
+                  <div class="linha">
+                    <img src="assets/images/pessoas/Dra. Ciria Lima Dias.jpg" alt="Regina Cély Barroso" />
+                      <div>
+                        <h2 class="nome">Dra. Círia Lima Dias</h2>
+                        <p>Astrofísica</p>
+                      </div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- FIM SWIPER WRAPPER -->
+              
+
+              <div class="swiper-pagination pag-2"></div>
+              <div class="swiper-button-prev prev-2"></div>
+              <div class="swiper-button-next next-2"></div>
+            </div>
+
+            <!-- DETALHES -->
+            <div class="detalhes">
+              <div class="detalhes-content">
+                  <div class="content-child titulos coluna">
+                    <img class="detalhe-foto" src="" alt="Foto do palestrante">
+                    <div class="detalhes-titulos wrap-text coluna"></div>
+                  </div>
+                  <div class="content-child">
+                    <h3 class="detalhe-nome"></h3>
+                    <p class="detalhe-atuacao"></p>
+                    <p class="detalhe-bio desktop-item"></p>
+                    <p class="detalhe-bio-mobile mobile-item"></p>
+                  </div>
+                <button class="fechar">Fechar</button>
+              </div>
+            </div>
+          </section>
+          <!-- FIM -->
+        </div>
+    </div>
+
+<div>
+  <h1 class="dia mobile-dia">Quarta-feira</h1>
+  <h1 class="dia desktop-dia">Quarta-feira (26/05)</h1>
+  <div class="schedule-cont">
+    <h2>08:00 às 10:00</h2>
+    <p>Apresentação de trabalhos: Graduação e Pós - Graduação.</p>
+    <h2>10:00 às 10:30</h2>
+    <p>Coffee Break.</p>
+    <h2>10:30 às 12:00</h2>
+    <p>
+    Mesa-redonda - Mulheres na Física: Quebrando Barreiras e Superando
+    Desafios. Coordenadora: Dra. Isadora Tairinne de Sena Bastos.
+    </p>
+    <p>
+    Debatedores: Dra. Regina Cély Barroso, Dra. Suellen Maria Valeriano
+    Novais e Dra. Jemima Pereira Guedes.
+    </p>
+    <h2>12:00-12:30</h2>
+    <p>Encerramento.</p>
+  </div>
+  <div class="palestrantes">
+    <h2>Destaques do Dia</h2>
+    <!-- INICIO -->
+        <section class="palestrantes-slider">
+          <div class="swiper mySwiper3">
+            <!-- INÍCIO SWIPER WRAPPER -->
+            <div class="swiper-wrapper">
+              <!-- Palestrante 1 -->
+              <div class="swiper-slide palestrante-card"
+              data-nome="Dra. Regina Cély Barroso" 
+              data-atuacao="Física Nuclear Aplicada à Biomedicina"
+              data-bio='Pioneira no uso de técnicas nucleares para diagnóstico
+              médico, a Dra. Regina Barroso construiu uma carreira que
+              transforma física fundamental em ferramentas para a saúde. Seu
+              trabalho no Laboratório Nacional de Luz Síncrotron (LNLS)
+              desenvolveu métodos não-destrutivos para análise de tecidos ósseos
+              que revolucionaram o estudo da osteoporose.;
+              Utilizando fluorescência de raios X com resolução micrométrica, sua equipe
+              mapeou a distribuição espacial de elementos traço em ossos humanos, revelando
+              padrões surpreendentes de acumulação de metais pesados e sua relação com doenças
+              degenerativas. Esses estudos têm implicações importantes tanto para diagnóstico
+              precoce quanto para o desenvolvimento de novos materiais biomédicos.;
+              Como professora titular da UERJ, a Dra. Barroso formou gerações de pesquisadores
+              na interface física-biomedicina, sempre com ênfase na aplicação social do
+              conhecimento científico. Seu laboratório é referência internacional em técnicas
+              de imagem por raios X aplicadas a sistemas biológicos.'
+              data-biomobile="Pioneira no uso de luz síncrotron para
+              diagnóstico médico, a Dra. Barroso (UERJ) desenvolveu técnicas
+              não-invasivas para estudar ossos e tecidos. Seus mapas de
+              distribuição de elementos traço em tecido ósseo revolucionaram o
+              entendimento da osteoporose. Utilizando fluorescência de raios X
+              com resolução micrométrica, revelou como metais pesados se
+              acumulam em estruturas biológicas. No LNLS, criou métodos para
+              análise de materiais biomédicos que combinam difração e
+              espectroscopia. Professora titular com bolsa de produtividade do
+              CNPq, formou gerações de pesquisadores na interface
+              física-biomedicina. Seu laboratório é referência internacional em
+              técnicas de imagem aplicadas à saúde, traduzindo física nuclear em
+              avanços diagnósticos."
+              data-titulos="Bacharel em Física (UFRJ);
+              Mestrado em Engenharia Nuclear (UFRJ);
+              Doutorado em Engenharia Nuclear (UFRJ);
+              Pós Doutorado em Física Médica;
+              Especialista em Técnicas de imagem por luz síncrotron;
+              Especialista em Aplicações biomédicas da física nuclear"
+              data-foto="assets/images/pessoas/Dra. Regina Cély Barroso.jpg"
+              >
+                <div class="linha">
+                  <img src="assets/images/pessoas/Dra. Regina Cély Barroso.jpg" alt="Regina Cély Barroso" />
+                  <div>
+                    <h2 class="nome">Dra. Regina Cély Barroso</h2>
+                    <p>Física Nuclear - UFRJ</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Palestrante 2 -->
+              <div class="swiper-slide palestrante-card"
+              data-nome="Dra. Suellen Maria Valeriano Novais" 
+              data-atuacao="Física de Materiais Luminescentes."
+              data-bio='Na fronteira entre nanotecnologia e medicina, a Dra. Suellen Novais desenvolve
+              uma nova geração de materiais cintiladores que prometem revolucionar tanto o
+              diagnóstico quanto o tratamento do câncer. Seu trabalho combina síntese química
+              inovadora (incluindo o método hidrotérmico assistido por microondas) com
+              caracterização física avançada para criar nanopartículas com propriedades
+              luminescentes sob medida.;
+
+              Esses materiais, quando funcionalizados com biomoléculas específicas, podem não
+              apenas melhorar a qualidade da imagem em exames como PET-CT, mas também atuar
+              como agentes terapêuticos na terapia fotodinâmica. Seus estudos sobre mecanismos
+              de transferência de energia em escala nanométrica estão abrindo caminho para
+              sistemas "tudo-em-um" que combinam diagnóstico e tratamento.;
+
+              Paralelamente à pesquisa, a Dra. Novais mantém um vigoroso programa de
+              divulgação científica através do projeto Física Interativa, que já atingiu
+              milhares de estudantes no Recôncavo Baiano, mostrando como conceitos físicos
+              abstratos se traduzem em tecnologias que salvam vidas.'
+              data-biomobile='Na UFRB, a Dra. Novais sintetiza nanopartículas
+              cintiladoras para aplicações médicas revolucionárias. Combinando
+              métodos sol-gel e hidrotérmico assistido por microondas, cria
+              materiais luminescentes para imageamento e terapia. Seus estudos
+              sobre transferência de energia em nanoescala permitem sistemas
+              "tudo-em-um" que diagnosticam e tratam simultaneamente.
+              Paralelamente, coordena o projeto Física Interativa, popularizando
+              ciência no Recôncavo Baiano através de experimentos lúdicos.
+              Investigando propriedades óticas de compósitos, desenvolve
+              cintiladores mais eficientes para radioterapia e PET-CT. Sua
+              pesquisa une síntese química, caracterização avançada (EXAFS,
+              termoluminescência) e aplicações clínicas, formando uma ponte
+              entre laboratório e leito hospitalar.'
+              data-titulos="Doutora em Física (UFS);
+              Mestre em Física (UFS);
+              Graduada em Física Médica (UFS);
+              Especialista em nanomateriais cintiladores;
+              Especialista em técnicas de luminescência (TL, XRL);
+              Especialista em síntese de materiais por métodos sol-gel"
+              data-foto="assets/images/pessoas/Dra. Suellen Maria Valeriano Novais.jpg"
+              >
+                <div class="linha">
+                  <img src="assets/images/pessoas/Dra. Suellen Maria Valeriano Novais.jpg" alt="Regina Cély Barroso" />
+                    <div>
+                      <h2 class="nome">Dra. Suellen M. V. Novais</h2>
+                      <p>Física de Materiais</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!-- FIM SWIPER WRAPPER -->
+            
+
+            <div class="swiper-pagination pag-3"></div>
+            <div class="swiper-button-prev prev-3"></div>
+            <div class="swiper-button-next next-3"></div>
+          </div>
+
+          <!-- DETALHES -->
+          <div class="detalhes">
+            <div class="detalhes-content">
+                <div class="content-child titulos coluna">
+                  <img class="detalhe-foto" src="" alt="Foto do palestrante">
+                  <div class="detalhes-titulos wrap-text coluna"></div>
+                </div>
+                <div class="content-child">
+                  <h3 class="detalhe-nome"></h3>
+                  <p class="detalhe-atuacao"></p>
+                  <p class="detalhe-bio desktop-item"></p>
+                  <p class="detalhe-bio-mobile mobile-item"></p>
+                </div>
+              <button class="fechar">Fechar</button>
+            </div>
+          </div>
+        </section>
+        <!-- FIM -->
+  </div>
+</div>
   </section>
   
-  <!-- Slider de Palestrantes -->
-  <section class="palestrantes">
-    <h2 class="telegraf-ultrabold">Palestrantes em Destaque</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide palestrante-card" onclick="mostrarDetalhes(this)" data-nome="João Silva" data-bio="João é especialista em inovação tecnológica com 10 anos de experiência em startups." data-foto="https://via.placeholder.com/150">
-          <img src="https://via.placeholder.com/150" alt="João">
-          <h3>João Silva</h3>
-          <!-- <div class="estrelas">★ ★ ★ ★ <span class="text-gray-300">★</span></div> -->
-        </div>
-
-        <!-- Outros slides -->
-      </div>
-    </div>
-
-    
-    <div id="detalhes" class="detalhes hidden">
-      <div class="detalhes-container">
-        <img id="detalhe-foto" src="" alt="Foto do palestrante">
-        <div>
-          <h3 id="detalhe-nome"></h3>
-          <p id="detalhe-bio"></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  
   <!--               Inicio do Icones                     -->
-
+  
   <section class="icons">
           <div class="icon">
-            <a href="#" >
-              <img src="assets/icons/1.png" alt="Ensino"><p>Ensino</p>
+            <a href="#">
+              <div class="ic">
+                <svg style="color: white;" class="square" alt="Ensino">
+                  <use href="assets/vectors/icons.svg#4"></use>
+                </svg>
+              </div>
+              <p>Ensino</p>
             </a>
           </div>
           <div class="icon">
             <a href="#" >
-              <img src="assets/icons/2.png" alt="Tecnologia"><p>Tecnologia</p>
+              <div class="ic">
+                <svg style="color: white;" class="square" alt="Astronomia">
+                  <use href="assets/vectors/icons.svg#1"></use>
+                </svg>
+              </div>
+              <p>Tecnologia</p>
             </a>
           </div>
           <div class="icon">
             <a href="#" >
-              <img src="assets/icons/3.png" alt="Energia"><p>Energia</p>
+              <div class="ic">
+                <svg style="color: white;" class="square" alt="Astronomia">
+                  <use href="assets/vectors/icons.svg#2"></use>
+                </svg>
+              </div>
+              <p>Energia</p>
             </a>
           </div>
           <div class="icon">
             <a href="#" >
-              <img src="assets/icons/4.png" alt="Indústria"><p>Indústria</p>
+              <div class="ic">
+                <svg style="color: white;" class="square" alt="Astronomia">
+                  <use href="assets/vectors/icons.svg#3"></use>
+                </svg>
+              </div>
+              <p>Indústria</p>
             </a>
           </div>
           <div class="icon">
             <a href="#" >
-              <img src="assets/icons/5.png" alt="Medicina"><p>Medicina</p>
+              <div class="ic">
+                <svg style="color: white;" class="square" alt="Astronomia">
+                  <use href="assets/vectors/icons.svg#5"></use>
+                </svg>
+              </div>
+              <p>Medicina</p>
             </a>
           </div>
           <div class="icon">
             <a href="#" >
-              <img src="assets/icons/6.png" alt="Astronomia"><p>Astronomia</p>
+              <div class="ic">
+                <svg style="color: white;" class="square" alt="Astronomia">
+                  <use href="assets/vectors/sprite.svg#vector-4"></use>
+                </svg>
+              </div>
+              <p>Astronomia</p>
             </a>
           </div>
   </section>
@@ -223,11 +1009,14 @@
   <!--               Fim do rodape                     -->
 
   <!--               chamada do arquivo js                     -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="assets/js/banner-js.js"></script>
 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Inicialização -->
+  <script src="assets/js/palestrantes-slider_v2.js"></script>
   <!--               fim da chamada do arquivo js                    -->
 
 </body>

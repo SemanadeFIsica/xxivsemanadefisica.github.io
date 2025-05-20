@@ -1,0 +1,171 @@
+Dra. Círia Lima Dias
+
+    Doutora em Astronomia (Universidad de La Serena, 2021)
+
+    Mestre em Astrofísica e Física Computacional (Cruzeiro do Sul, 2016)
+
+    Bacharel em Física (UEFS, 2013)
+
+    Pesquisadora em evolução de galáxias em ambientes densos
+
+    Especialista em dados multiwavelength (óptico, infravermelho, rádio)
+
+    Investigadora do aglomerado de Hydra como laboratório cósmico
+
+Dr. João de Azevedo Cardeal
+
+    Doutor em Física (UnB, 2005)
+
+    Mestre em Física (UFBA, 2001)
+
+    Licenciado em Física (UFBA, 1994)
+
+    Professor Adjunto da UEFS
+
+    Especialista em teoria de grupos e equações diferenciais
+
+    Ex-coordenador do Mestrado Profissional em Ensino de Física
+
+    Pesquisador em econofísica e simetrias matemáticas
+
+Dr. Paulo Jackson Assunção Lago
+
+    Doutor em Astronomia (USP, 2017)
+
+    Mestre em Astronomia (USP, 2013)
+
+    Bacharel em Física (UEFS, 2010)
+
+    Operador técnico do Observatório Rubin (Chile)
+
+    Ex-pós-doutorando do LNA (CNPq)
+
+    Especialista em nebulosas planetárias e meio interestelar
+
+    Colaborador dos observatórios Gemini e SOAR
+
+Dr. Daniel Medeiros Reis
+
+    Doutor em Física (CBPF, 2021)
+
+    Mestre em Física (UERJ, 2016)
+
+    Bacharel em Física (UEFS, 2014)
+
+    Especialista em Teoria Quântica de Campos
+
+    Pesquisador em aplicações nucleares e matéria condensada
+
+    Investigador de metamateriais e transições de fase
+
+Dra. Fanny Costa
+
+    Chefe do X-ray Analytical Facilities (Bragg Centre, Leeds)
+
+    Doutora em Cristalografia
+
+    Ex-pesquisadora do Diamond Light Source (UK)
+
+    Ex-professora da UFABC
+
+    Especialista em:
+
+        Análise de fármacos por difração de raios X
+
+        Método Rietveld e Pair Distribution Function
+
+        Polimorfismo cristalino
+
+Me. Gleidson de Oliveira Pinto
+
+    Mestre em Modelagem Computacional (SENAI-BA, 2013)
+
+    Licenciado em Física (UEFS, 2006)
+
+    Supervisor de Proteção Radiológica (Medicina Nuclear)
+
+    Físico médico em múltiplas instituições de saúde
+
+    Especialista em:
+
+        Garantia de qualidade em imagens diagnósticas
+
+        Dosimetria em mamografia e tomografia
+
+        Protocolos de segurança radiológica
+
+Dra. Regina Cely Barroso
+
+    Professora Titular da UERJ
+
+    Doutora e Mestre em Engenharia Nuclear (UFRJ)
+
+    Pós-doutora no Elettra Synchrotron (Itália)
+
+    Bolsista de Produtividade do CNPq
+
+    Especialista em:
+
+        Técnicas de imagem por luz síncrotron
+
+        Difração e fluorescência de raios X
+
+        Aplicações biomédicas da física nuclear
+
+Dra. Suellen Maria Valeriano Novais
+
+    Doutora em Física (UFS, com estágio na TU Delft)
+
+    Mestre em Física (UFS, 2010)
+
+    Graduada em Física Médica (UFS, 2007)
+
+    Professora da UFRB
+
+    Coordenadora do projeto "Física Interativa"
+
+    Especialista em:
+
+        Nanomateriais cintiladores
+
+        Técnicas de luminescência (TL, XRL)
+
+        Síntese de materiais por métodos sol-gel
+
+Dra. Susane Eterna Leite Medeiros
+
+    Doutora em Física (UFPB)
+
+    Mestre em Energias Renováveis (UFPB)
+
+    Bacharel em Física Computacional (UnB)
+
+    Professora Visitante na UEFS
+
+    Especialista em:
+
+        Simulações computacionais (DFT)
+
+        Nanomateriais para energia
+
+        Síntese e caracterização de nanoestruturas
+
+Dra. Vera Aparecida Fernandes Martin
+
+    Professora Titular da UEFS
+
+    Doutora e Mestre em Astronomia (USP)
+
+    Pós-doutora em Astrofísica (LNA)
+
+    Ex-coordenadora do Mestrado em Astronomia da UEFS
+
+    Atual coordenadora da PROGRAD/UEFS
+
+    Especialista em:
+
+        Astronomia fundamental
+
+        Galáxias aneladas peculiares
+
+        Sistemas de referência astronômicos

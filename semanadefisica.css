@@ -90,10 +90,19 @@ body {
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Telegraf', Helvetica, Arial, sans-serif !important;
     font-weight: 900 !important;
+    font-size: clamp(1.2rem, 0.6vw);
+
 }
 p {
-font-family: 'Garet', Helvetica, Arial, sans-serif !important;
-font-weight: normal !important;
+    font-family: 'Garet', Helvetica, Arial, sans-serif !important;
+    font-weight: normal !important;
+    font-size: clamp(0.9rem, 0.25vw);
+}
+
+.wrap-text {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 nav {
@@ -332,8 +341,13 @@ main {
     border: 0px solid rgba(138, 79, 255, 0.3);
 }
 
+.bd {
+    border: red 1px dashed;
+}
+
 .cont-txt {
-    max-width: 800px;
+    /* max-width: 800px; */
+    max-width: 70vw;
     margin: 3rem auto;
     padding: 0 1rem;
     text-align: center;
@@ -364,6 +378,10 @@ main {
     margin-top: 0;
 }
 
+.icons p {
+    text-align: center;
+}
+
 .icon {
     display: flex;
     flex-direction: column;
@@ -379,16 +397,28 @@ main {
     filter: drop-shadow(0 0 5px #8a4fff);
 }
 
-.icon img {
-    width: 50px; /* Smaller for mobile */
-    height: 50px;
+.icon div.ic {
+    display: flex;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    width: clamp(0.875rem, 5vw, 5rem); /* Smaller for mobile */
+    height: clamp(0.875rem, 5vw, 5rem);
     margin-bottom: 5px;
     object-fit: contain;
     margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(58, 0, 134, 0.3);
     border-radius: 50%;
-    padding: 5px;
+    padding: 0.5vw;
     border: 2px solid rgba(138, 79, 255, 0.5);
+}
+
+.icon svg {
+    margin: auto;
+    aspect-ratio: 1;
+    width: 85%;
 }
 
 .icon p {
@@ -425,65 +455,6 @@ main {
     margin-top: 0;
     background-size: cover;
     background-position: center;
-}
-
-.swiper-container .swiper-button-next,
-.swiper-container .swiper-button-prev {
-    width: 30px !important; /* Tamanho base para mobile */
-    height: 30px !important;
-    background-color: rgba(58, 0, 134, 0.5) !important;
-    border-radius: 3px !important; /* Quadrado com cantos levemente arredondados */
-    margin-top: -15px !important; /* Centraliza verticalmente */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) !important;
-}
-
-.swiper-container .swiper-button-next:after,
-.swiper-container .swiper-button-prev:after {
-    font-size: 14px !important; /* Tamanho reduzido para caber bem no botão quadrado */
-    color: white !important;
-    font-weight: bold !important;
-}
-
-/* Efeito hover */
-.swiper-container .swiper-button-next:hover,
-.swiper-container .swiper-button-prev:hover {
-    background-color: rgba(138, 79, 255, 0.7) !important;
-    transform: translateY(-2px) !important;
-    cursor: pointer; /* Indica que é clicável */
-}
-
-.swiper-button-next {
-    right: 5px; /* Closer to edge on mobile */
-}
-
-.swiper-button-prev {
-    left: 5px; /* Closer to edge on mobile */
-}
-
-.swiper-pagination {
-    position: absolute;
-    bottom: 5px; /* Closer to bottom on mobile */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    margin-top: 0;
-}
-
-.swiper-pagination-bullet {
-    background: white;
-    opacity: 0.7;
-    width: 8px; /* Smaller for mobile */
-    height: 8px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    margin: 0 4px; /* Less spacing for mobile */
-    margin-top: 0;
-}
-
-.swiper-pagination-bullet-active {
-    opacity: 1;
-    background: #8a4fff;
-    transform: scale(1.2);
 }
 
 /* Animation for page transitions */
@@ -549,6 +520,9 @@ main {
         max-width: 600px; /* Constrain width on larger screens */
         gap: 20px;
     }
+    .icon {
+        flex-basis: 30%;
+    }
 }
 
 
@@ -583,7 +557,7 @@ main {
     
     /* Reduzir ligeiramente o gap para desktop para encaixar melhor */
     .icons {
-        gap: 10px;
+        gap: 2vw;
     }
 
     .icon img {
@@ -600,16 +574,7 @@ main {
     }
     */
     
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 40px; /* Larger on desktop */
-        height: 40px;
-    }
     
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        font-size: 20px; /* Larger on desktop */
-    }
     
     nav ul li a {
         padding: 10px 20px; /* More padding on desktop */
@@ -630,21 +595,35 @@ main {
     .icon {
         flex-basis: 45%; /* 2 icons per row on smallest screens */
     }
-    
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 25px; /* Even smaller */
-        height: 25px;
+    .icon div.ic {
+        width: clamp(0.875rem, 10vw, 5rem); /* Smaller for mobile */
+        height: clamp(0.875rem, 10vw, 5rem);
+    }
+    .icon svg {
+        transform: scale(1.4);
+    }
+    .icon div.ic {
+        width: clamp(0.875rem, 15vw, 5rem); /* Smaller for mobile */
+        height: clamp(0.875rem, 15vw, 5rem);
+    }
+    .icon svg {
+        transform: scale(1.4);
+    }
+
+    .cont-txt {
+        max-width: 80vw;
     }
 }
 
 /* For extremely small screens - hamburger menu */
 @media screen and (max-width: 480px) {
     .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 15px;
-        top: 10px;
+        /* display: block; */
+        display: none;
+        position: relative;
+    }
+    nav {
+        display: none;
     }
     
     /* Hide menu items by default on very small screens */
@@ -658,6 +637,7 @@ main {
         left: 15px;
         width: auto;
         border-radius: 0 0 10px 10px;
+        z-index: 1000;
     }
     
     /* When active class is added via JS */

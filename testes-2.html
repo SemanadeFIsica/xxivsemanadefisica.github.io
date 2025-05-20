@@ -1,84 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XXIV Semana de Física</title>
-  <link rel="stylesheet" href="semanadefisica.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Palestrantes com Detalhes</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
   <style>
-    .star { color: gold; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #12002f;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    .palestrantes-slider {
+      padding: 2vw;
+      background: linear-gradient(135deg, #3a0086, #6a3cb5);
+      border-radius: 1.5vw;
+      margin: 2vw;
+      box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding-bottom 0.3s ease;
+    }
+
+    .palestrantes-slider h2 {
+      text-align: center;
+      margin-bottom: 2vw;
+      font-size: 2vw;
+    }
+
+    .swiper {
+      padding-bottom: 3vw;
+    }
+
+    .palestrante-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1vw;
+      text-align: center;
+      padding: 1vw;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .palestrante-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px #8a4fff;
+    }
+
+    .palestrante-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid rgba(138, 79, 255, 0.5);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: white;
+    }
+
+    .swiper-pagination-bullet {
+      background: white;
+      opacity: 0.7;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #8a4fff;
+    }
+
+    .detalhes {
+      max-height: 0;
+      overflow: hidden;
+      background: #1e0057;
+      transition: max-height 0.5s ease;
+      border-radius: 1vw;
+      margin-top: 1vw;
+      padding: 0 2vw;
+    }
+
+    .detalhes.open {
+      max-height: 400px;
+      padding-top: 1vw;
+      padding-bottom: 1.5vw;
+    }
+
+    .detalhes-content {
+      display: flex;
+      gap: 1vw;
+      align-items: center;
+    }
+
+    .detalhes-content img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #8a4fff;
+    }
+
+    .detalhes-content div {
+      max-width: 600px;
+    }
+
+    .fechar {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      background: #8a4fff;
+      color: white;
+      border: none;
+      border-radius: 0.5vw;
+      padding: 0.3vw 0.8vw;
+      cursor: pointer;
+      font-size: 1vw;
+    }
   </style>
 </head>
+<body>
 
-<body class="fade-in">
-
-  <!-- Navegação -->
-  <nav class="nav">
-    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
-    <ul class="menu">
-      <li><a href="#">Início</a></li>
-      <li class="dropdown">
-        <a href="#">Dicas</a>
-        <div class="dropdown-content">
-          <a href="#">Física</a>
-          <a href="#">Mecânica</a>
-          <a href="#">Relatividade</a>
-        </div>
-      </li>
-      <li><a href="#">Sobre Nós</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
-  </nav>
-
-  <!-- Slide principal -->
-  <section class="about">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="assets/slider/2.jpg" alt="Slide 1">
-          <div class="slider-button-container">
-            <a href="https://docs.google.com/forms/..." class="btn btn-white garet-heavy">Inscreva-se Agora!</a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <img src="assets/slider/1.jpg" alt="Slide 2">
-        </div>
-        <div class="swiper-slide">
-          <img src="assets/slider/banner segundafeira.jpg" alt="Slide 3">
-        </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </section>
-
-  <!-- Texto sobre o evento -->
-  <section class="cont-txt">
-    <h1 class="telegraf-ultrabold">Sobre a Semana de Física</h1>
-    <p class="garet-book">
-      A Semana de Física da UEFS (Universidade Estadual de Feira de Santana) é um evento acadêmico e científico que reúne estudantes, professores e pesquisadores para discutir temas atuais e relevantes da Física. A programação costuma incluir palestras, minicursos, oficinas, apresentações de trabalhos e mesas-redondas, promovendo o intercâmbio de conhecimento e a valorização da ciência. Além disso, o evento proporciona um espaço importante para a divulgação científica e para o fortalecimento da comunidade acadêmica, incentivando o pensamento crítico e o interesse pela pesquisa.
-    </p>
-  </section>
-
-  <!-- Slider de Palestrantes -->
-  <section class="palestrantes">
-    <h2 class="telegraf-ultrabold">Palestrantes em Destaque</h2>
+  <section class="palestrantes-slider" id="slider-section">
+    <h2>Palestrantes em Destaque</h2>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide palestrante-card" onclick="mostrarDetalhes(this)" data-nome="João Silva" data-bio="João é especialista em inovação tecnológica com 10 anos de experiência em startups." data-foto="https://via.placeholder.com/150">
-          <img src="https://via.placeholder.com/150" alt="João">
+        <div class="swiper-slide palestrante-card"
+             data-nome="João Silva"
+             data-bio="Especialista em inovação tecnológica com 10 anos de experiência em startups."
+             data-foto="https://via.placeholder.com/150"
+        >
+          <img src="https://via.placeholder.com/150" alt="João Silva" />
           <h3>João Silva</h3>
-          <div class="estrelas">★ ★ ★ ★ <span class="text-gray-300">★</span></div>
+          <p>Físico Experimental</p>
         </div>
 
-        <!-- Outros slides -->
+        <div class="swiper-slide palestrante-card"
+             data-nome="Maria Souza"
+             data-bio="Astrofísica dedicada à divulgação científica e observação de exoplanetas."
+             data-foto="https://via.placeholder.com/150"
+        >
+          <img src="https://via.placeholder.com/150" alt="Maria Souza" />
+          <h3>Maria Souza</h3>
+          <p>Astrofísica</p>
+        </div>
+
+        <div class="swiper-slide palestrante-card"
+             data-nome="Carlos Lima"
+             data-bio="Engenheiro de materiais com foco em nanotecnologia e aplicações biomédicas."
+             data-foto="https://via.placeholder.com/150"
+        >
+          <img src="https://via.placeholder.com/150" alt="Carlos Lima" />
+          <h3>Carlos Lima</h3>
+          <p>Eng. de Materiais</p>
+        </div>
       </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
 
-    <div id="detalhes" class="detalhes hidden">
-      <div class="detalhes-container">
+    <div class="detalhes" id="detalhes">
+      <button class="fechar" onclick="fecharDetalhes()">Fechar</button>
+      <div class="detalhes-content">
         <img id="detalhe-foto" src="" alt="Foto do palestrante">
         <div>
           <h3 id="detalhe-nome"></h3>
@@ -88,20 +176,40 @@
     </div>
   </section>
 
-  <!-- Ícones de áreas -->
-  <section class="icons">
-    <div class="icon">
-      <a href="#"><img src="assets/icons/1.png" alt="Ensino"><p>Ensino</p></a>
-    </div>
-    <!-- Outros ícones seguem o mesmo padrão -->
-  </section>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Rodapé -->
-  <footer class="rodape">
-    <p>&copy; 2024 Semana de Física - UEFS</p>
-  </footer>
+  <!-- Script -->
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
 
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+    const cards = document.querySelectorAll('.palestrante-card');
+    const detalhes = document.getElementById('detalhes');
+    const nome = document.getElementById('detalhe-nome');
+    const bio = document.getElementById('detalhe-bio');
+    const foto = document.getElementById('detalhe-foto');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        nome.textContent = card.dataset.nome;
+        bio.textContent = card.dataset.bio;
+        foto.src = card.dataset.foto;
+        detalhes.classList.add('open');
+      });
+    });
+
+    function fecharDetalhes() {
+      detalhes.classList.remove('open');
+    }
+  </script>
 </body>
 </html>
