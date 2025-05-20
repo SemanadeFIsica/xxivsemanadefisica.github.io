@@ -25,7 +25,7 @@
     margin-top: clamp(-4rem, -0.6vw, -1rem);
 }
 .event-schedule h1.dia {
-    margin-top: -12vw;
+    margin-top: 1vw;
     position: relative;
     text-align: justify;
     font-size: clamp(1rem, 8.5vw, 4.8rem);
@@ -80,7 +80,9 @@
 
 @media screen and (max-width: 768px)
 {
-    .event-schedule h1.dia {
-        margin-top: -28vw;
-    }
+    
+}
+
+@media screen and (max-width: 576){
+
 }
